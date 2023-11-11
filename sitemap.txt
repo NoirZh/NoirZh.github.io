@@ -6,6 +6,5 @@ http://example.com/links/index.html
 http://example.com/books/index.html
 http://example.com/categories/index.html
 http://example.com/about/me.html
-http://example.com/2023/11/11/hello-world/
 http://example.com/
 http://example.com/tags/test/
