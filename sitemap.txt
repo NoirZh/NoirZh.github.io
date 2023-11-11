@@ -1,3 +1,4 @@
+http://example.com/2023/07/01/a_translation/
 http://example.com/2023/11/11/My-New-Post/
 http://example.com/repository/index.html
 http://example.com/tags/index.html
@@ -7,3 +8,4 @@ http://example.com/categories/index.html
 http://example.com/about/me.html
 http://example.com/2023/11/11/hello-world/
 http://example.com/
+http://example.com/tags/test/
