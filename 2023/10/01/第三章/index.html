@@ -17,21 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>A=B 第一章题解 | 一共十七划</title>
-  <meta name="description" content="前言 A&#x3D;B语言也较为特殊,可以认为整体是个循环体,但是是每次循环只要能够执行一条命令就去执行,然后就重新回到循环开头 这个性质会在后续不断应用 而且其本质在做的就是字符串替换 1.1 A到B 1a&#x3D;b 1.2 大写 123a&#x3D;Ab&#x3D;Bc&#x3D;C 1.3 去重 思路 显然我们最后要保留的状态是没有连续字母 只需要将重复的几个压成一个就行,不过要注意A&#x3D;B这个语言的特殊性 代码">
+  <title>A=B 第三章题解 | 一共十七划</title>
+  <meta name="description" content="前言 这个关键字相当于在找到特定的子字符串之后,删去该子字符串,并且将我们指定的新字符串插入到原字符串的开头与结尾 类似于正则表达式的^与$的应用 很像是我们在第二章的操作:将字母压之后换成其他字母往后排以使得压缩持续进行  3-1 去除 相当简单的教程 12(start)a&#x3D;(end)a&#x3D; 3-2 旋转 这里只针对前面不是a进行操作,可以保证 12(start)b&#x3D;(end)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="A&#x3D;B 第一章题解">
-<meta property="og:url" content="https://noirzh.github.io/2023/11/01/%E7%AC%AC%E4%B8%80%E7%AB%A0/index.html">
+<meta property="og:title" content="A&#x3D;B 第三章题解">
+<meta property="og:url" content="https://noirzh.github.io/2023/10/01/%E7%AC%AC%E4%B8%89%E7%AB%A0/index.html">
 <meta property="og:site_name" content="一共十七划">
-<meta property="og:description" content="前言 A&#x3D;B语言也较为特殊,可以认为整体是个循环体,但是是每次循环只要能够执行一条命令就去执行,然后就重新回到循环开头 这个性质会在后续不断应用 而且其本质在做的就是字符串替换 1.1 A到B 1a&#x3D;b 1.2 大写 123a&#x3D;Ab&#x3D;Bc&#x3D;C 1.3 去重 思路 显然我们最后要保留的状态是没有连续字母 只需要将重复的几个压成一个就行,不过要注意A&#x3D;B这个语言的特殊性 代码">
+<meta property="og:description" content="前言 这个关键字相当于在找到特定的子字符串之后,删去该子字符串,并且将我们指定的新字符串插入到原字符串的开头与结尾 类似于正则表达式的^与$的应用 很像是我们在第二章的操作:将字母压之后换成其他字母往后排以使得压缩持续进行  3-1 去除 相当简单的教程 12(start)a&#x3D;(end)a&#x3D; 3-2 旋转 这里只针对前面不是a进行操作,可以保证 12(start)b&#x3D;(end)">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-11-01T13:04:50.000Z">
-<meta property="article:modified_time" content="2023-11-11T08:49:05.676Z">
+<meta property="article:published_time" content="2023-10-01T15:04:20.000Z">
+<meta property="article:modified_time" content="2023-11-12T07:20:31.363Z">
 <meta property="article:author" content="Noir">
 <meta property="article:tag" content="A&#x3D;B">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://noirzh.github.io/2023/11/01/%E7%AC%AC%E4%B8%80%E7%AB%A0/index.html">
+  <link rel="canonical" href="https://noirzh.github.io/2023/10/01/%E7%AC%AC%E4%B8%89%E7%AB%A0/index.html">
   
     <link rel="alternate" href="/atom.xml" title="一共十七划" type="application/atom+xml">
   
@@ -329,7 +329,7 @@ mjx-container[display="true"] + br {
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">十月 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">四月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">十月 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">九月 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">四月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">三月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -341,36 +341,6 @@ mjx-container[display="true"] + br {
     <div class="widget-body">
       <ul class="recent-post-list list-unstyled no-thumbnail">
         
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="/2023/11/11/My-New-Post/" class="title">markdown排版效果</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2023-11-11T07:24:50.000Z" itemprop="datePublished">2023-11-11</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="/2023/11/09/%E7%AC%AC%E4%B8%89%E7%AB%A0/" class="title">A=B 第三章题解</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2023-11-09T15:04:20.000Z" itemprop="datePublished">2023-11-09</time>
-              </p>
-            </div>
-          </li>
-          
           <li>
             
             <div class="item-inner">
@@ -393,10 +363,10 @@ mjx-container[display="true"] + br {
                 
               </p>
               <p class="item-title">
-                <a href="/2023/11/07/%E7%AC%AC%E4%BA%8C%E7%AB%A0/" class="title">A=B 第二章题解</a>
+                <a href="/2023/10/22/%E9%A2%98%E8%A7%A3-%E5%81%9A%E8%8F%9C%E9%A1%BA%E5%BA%8F/" class="title">题解-做菜顺序-排序,贪心,前缀和,一点点证明</a>
               </p>
               <p class="item-date">
-                <time datetime="2023-11-07T07:24:50.000Z" itemprop="datePublished">2023-11-07</time>
+                <time datetime="2023-10-22T00:16:17.000Z" itemprop="datePublished">2023-10-22</time>
               </p>
             </div>
           </li>
@@ -408,10 +378,40 @@ mjx-container[display="true"] + br {
                 
               </p>
               <p class="item-title">
-                <a href="/2023/11/01/%E7%AC%AC%E4%B8%80%E7%AB%A0/" class="title">A=B 第一章题解</a>
+                <a href="/2023/10/15/%E9%A2%98%E8%A7%A3-%E6%9C%80%E9%95%BF%E7%9B%B8%E9%82%BB%E4%B8%8D%E7%9B%B8%E7%AD%89%E5%AD%90%E5%BA%8F%E5%88%97/" class="title">题解-最长不相等子序列 II-DP,时间On2,空间On</a>
               </p>
               <p class="item-date">
-                <time datetime="2023-11-01T13:04:50.000Z" itemprop="datePublished">2023-11-01</time>
+                <time datetime="2023-10-15T07:24:12.000Z" itemprop="datePublished">2023-10-15</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2023/10/10/%E9%A2%98%E8%A7%A3-%E7%A7%BB%E5%8A%A8%E6%9C%BA%E5%99%A8%E4%BA%BA/" class="title">题解-移动机器人-数组计算的三种思考方式方式(动态规划,贡献,前缀和)与相关证明</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-10-10T00:04:17.000Z" itemprop="datePublished">2023-10-10</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2023/10/01/%E7%AC%AC%E4%B8%89%E7%AB%A0/" class="title">A=B 第三章题解</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-10-01T15:04:20.000Z" itemprop="datePublished">2023-10-01</time>
               </p>
             </div>
           </li>
@@ -429,14 +429,14 @@ mjx-container[display="true"] + br {
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-第一章" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-第三章" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      A=B 第一章题解
+      A=B 第三章题解
     </h1>
   
 
@@ -444,8 +444,8 @@ mjx-container[display="true"] + br {
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2023/11/01/%E7%AC%AC%E4%B8%80%E7%AB%A0/" class="article-date">
-	  <time datetime="2023-11-01T13:04:50.000Z" itemprop="datePublished">2023-11-01</time>
+	<a href="/2023/10/01/%E7%AC%AC%E4%B8%89%E7%AB%A0/" class="article-date">
+	  <time datetime="2023-10-01T15:04:20.000Z" itemprop="datePublished">2023-10-01</time>
 	</a>
 </span>
         
@@ -458,13 +458,13 @@ mjx-container[display="true"] + br {
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/11/01/%E7%AC%AC%E4%B8%80%E7%AB%A0/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/10/01/%E7%AC%AC%E4%B8%89%E7%AB%A0/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 505(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 849(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3(分)</span>
 	
 
       </div>
@@ -472,41 +472,45 @@ mjx-container[display="true"] + br {
     <div class="article-entry marked-body" itemprop="articleBody">
       
         <h2 id="前言">前言</h2>
-<p>A=B语言也较为特殊,可以认为整体是个循环体,但是是每次循环只要能够执行一条命令就去执行,然后就重新回到循环开头</p>
-<p>这个性质会在后续不断应用</p>
-<p>而且其本质在做的就是字符串替换</p>
-<h2 id="11-a到b">1.1 A到B</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a=b</span><br></pre></td></tr></table></figure>
-<h2 id="12-大写">1.2 大写</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a=A</span><br><span class="line">b=B</span><br><span class="line">c=C</span><br></pre></td></tr></table></figure>
-<h2 id="13-去重">1.3 去重</h2>
+<p>这个关键字相当于在找到特定的子字符串之后,删去该子字符串,并且将我们指定的新字符串插入到原字符串的开头与结尾</p>
+<p>类似于正则表达式的^与$的应用</p>
+<p>很像是我们在第二章的操作:将字母压之后换成其他字母往后排以使得压缩持续进行</p>
+<h2 id="section"></h2>
+<h2 id="3-1-去除">3-1 去除</h2>
+<p>相当简单的教程</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(start)a=</span><br><span class="line">(end)a=</span><br></pre></td></tr></table></figure>
+<h2 id="3-2-旋转">3-2 旋转</h2>
+<p>这里只针对前面不是a进行操作,可以保证</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(start)b=(end)b</span><br><span class="line">(start)c=(end)c</span><br></pre></td></tr></table></figure>
+<h2 id="3-3-a到b-2">3-3 A到B 2</h2>
 <h3 id="思路">思路</h3>
-<p>显然我们最后要保留的状态是没有连续字母</p>
-<p>只需要将重复的几个压成一个就行,不过要注意A=B这个语言的特殊性</p>
+<p>开始上难度了,但是其实不难,我们只需要先把所有特定位置的a变成特殊的,然后再处理另一边的特殊的即可</p>
+<p>就像是我们之前做过的一样,此时的代码如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(start)a=x</span><br><span class="line">xa=ax</span><br><span class="line">(end)a=z</span><br><span class="line">az=za</span><br><span class="line">x=b</span><br><span class="line">z=b</span><br></pre></td></tr></table></figure>
+<h3 id="优化">优化</h3>
+<p>我们很容易注意到我们的xa=ax或者之类的操作只是把所有符合要求的串找出来,保证不阻塞生成</p>
+<p>于是我们注意到移到另一边的位置显然更好(指行数更小),更新之后如下</p>
 <h3 id="代码">代码</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">aa=a</span><br><span class="line">bb=b</span><br><span class="line">cc=c</span><br></pre></td></tr></table></figure>
-<h2 id="14-去重-2">1.4 去重 2</h2>
-<h3 id="思路-1">思路</h3>
-<p>同理,这个是把连续的a压没,</p>
-<p>这里之所以会有aaa,而不是直接<code>aa=</code>是因为假如只压缩的可能会剩下来:例如<code>aaa</code>会被替换成<code>a</code></p>
-<p>,我们这么做的本质是将多的字母先压成两个,再把这两个消除掉</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">aaa=aa</span><br><span class="line">aa=</span><br></pre></td></tr></table></figure>
-<h2 id="15-排序">1.5 排序</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(start)a=(end)x</span><br><span class="line">(end)x=(start)b</span><br><span class="line">(end)a=(start)x</span><br><span class="line">(start)x=(end)b</span><br></pre></td></tr></table></figure>
+<h2 id="3-5-首尾">3-5 首尾</h2>
+<p>通过上一题我们就知道弄到尾部直接判断即可</p>
+<p>我们唯一要注意的就是判断在前,不然容易出死循环</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ax=(return)true #有任意一个就是真的,能迅速检查到</span><br><span class="line">by=(return)true</span><br><span class="line">cz=(return)true</span><br><span class="line"></span><br><span class="line">#以下的操作会1.在有相同的时候把除了最后一个字母之外都换成其他字母插入到后面 2.没有相同的时候所有都插入到后面</span><br><span class="line">(start)a=(end)x</span><br><span class="line">(start)b=(end)y</span><br><span class="line">(start)c=(end)z</span><br><span class="line">=(return)false</span><br></pre></td></tr></table></figure>
+<h2 id="3-6-最多-2">3-6 最多 2</h2>
+<h2 id="思路-1">思路</h2>
+<p>与之前的类似,但是我们需要保留所有作比较的字母来保证恢复,然后这里其实就可以</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ca=ac</span><br><span class="line">cb=bc</span><br><span class="line">ba=ab</span><br><span class="line">ab=(end)x</span><br><span class="line">cx=(end)y #y代表abc,可随时换成最多的 #剩下ac和bc</span><br><span class="line">#之后我们不用关心y具体是什么,只要二者消耗,剩下的那个做全员回复就行</span><br><span class="line"></span><br><span class="line">ac=(end)y</span><br><span class="line">bc=(end)y</span><br><span class="line">#做一个穷举</span><br><span class="line">ax=aa</span><br><span class="line">cy=cc</span><br><span class="line">by=bb</span><br><span class="line">ay=aa</span><br><span class="line">bx=bb</span><br></pre></td></tr></table></figure>
+<h3 id="优化-1">优化</h3>
+<p>发现ax,ay的行为是相同的,bx,by也是,优化以下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ca=ac</span><br><span class="line">cb=bc</span><br><span class="line">ba=ab</span><br><span class="line">ab=(end)x</span><br><span class="line">cx=(end)y #y代表abc,可随时换成最多的</span><br><span class="line">#acy bcy ay by cy </span><br><span class="line"></span><br><span class="line">ac=(end)y</span><br><span class="line">bc=(end)y</span><br><span class="line">x=y</span><br><span class="line">cy=cc</span><br><span class="line">by=bb</span><br><span class="line">ay=a</span><br></pre></td></tr></table></figure>
+<h2 id="3-7回文串">3-7回文串</h2>
 <h3 id="思路-2">思路</h3>
-<p>研究语言的必经之路,排序,注意到我们现在在做的是替换字符串</p>
-<p>我们的目的是希望各个字母都在其应该在的位置,但我们不知道数组下标,怎么样能达成这两个条件呢?</p>
-<p>我们需要一个只看相邻的排序算法,也就是冒泡算法,实现起来不难,如下</p>
-<h3 id="代码-1">代码</h3>
-<p>看到了吗,本质就是大的向后挪动,这个在单步运行时候看的更清楚</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ba=ab</span><br><span class="line">cb=bc</span><br><span class="line">ca=ac</span><br></pre></td></tr></table></figure>
-<p>这个排序在之后会常用到的,当我们只关心字母数量之类的而不关心其位置的时候</p>
-<h2 id="16-比较">1.6 比较</h2>
-<h3 id="思路-3">思路</h3>
-<p>比较a和b的多少,还记得去重怎么做的吗?把两个相同的数摁在一起消除</p>
-<p>这个题也一样,我们把两个不同的字母摁在一起消除,剩下的就是多的字母</p>
-<p>值得一提的是压字母存在两个情况</p>
-<h3 id="代码-2">代码</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ab=</span><br><span class="line">ba=</span><br><span class="line">aa=a</span><br><span class="line">bb=b</span><br></pre></td></tr></table></figure>
+<p>判断是不是消除之后全空即可,如3-5的加强版,我们进行全局替换,然后穷举非空情况,但是注意我们不用考虑剩下来的单个字母的情况,因为那种情况也属于回文串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">cz=</span><br><span class="line">by=</span><br><span class="line">ax=</span><br><span class="line">(start)a=(end)x</span><br><span class="line">(start)b=(end)y</span><br><span class="line">(start)c=(end)z</span><br><span class="line">xy=(<span class="keyword">return</span>)false</span><br><span class="line">xz=(<span class="keyword">return</span>)false</span><br><span class="line">yx=(<span class="keyword">return</span>)false</span><br><span class="line">yz=(<span class="keyword">return</span>)false</span><br><span class="line">zx=(<span class="keyword">return</span>)false</span><br><span class="line">zy=(<span class="keyword">return</span>)false</span><br><span class="line">=(<span class="keyword">return</span>)true</span><br></pre></td></tr></table></figure>
+<h3 id="挑战优化">挑战优化</h3>
+<p>注意到我们六行代码目的都只是为了判断是否有两个字母及以上存在</p>
+<p>修改字符串使之存在首尾标识符即可,也就是说能保证显示出来两个字母不同且存在</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cuZn=</span><br><span class="line">buYn=</span><br><span class="line">auXn=</span><br><span class="line">(start)a=(end)uXn</span><br><span class="line">(start)b=(end)uYn #不影响排空</span><br><span class="line">(start)c=(end)uZn</span><br><span class="line">nu=(return)false  #出现这个说明仍有多个字母存在,整个字符串非空,</span><br><span class="line">=(return)true</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -516,7 +520,7 @@ mjx-container[display="true"] + br {
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://noirzh.github.io/2023/11/01/%E7%AC%AC%E4%B8%80%E7%AB%A0/" title="A=B 第一章题解" target="_blank" rel="external">https://noirzh.github.io/2023/11/01/第一章/</a>
+      <a href="https://noirzh.github.io/2023/10/01/%E7%AC%AC%E4%B8%89%E7%AB%A0/" title="A=B 第三章题解" target="_blank" rel="external">https://noirzh.github.io/2023/10/01/第三章/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -563,12 +567,12 @@ mjx-container[display="true"] + br {
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2023/11/07/%E7%AC%AC%E4%BA%8C%E7%AB%A0/" title="A=B 第二章题解"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2023/10/10/%E9%A2%98%E8%A7%A3-%E7%A7%BB%E5%8A%A8%E6%9C%BA%E5%99%A8%E4%BA%BA/" title="题解-移动机器人-数组计算的三种思考方式方式(动态规划,贡献,前缀和)与相关证明"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2023/11/01/translate_Efficient%20parallel%20branch-and-bound%20approaches%20for%20exact%20graph%20edit%20distance%20problem%20-%20%E5%89%AF%E6%9C%AC/" title="翻译:Efficient parallel branch-and-bound approaches for exact graph edit distance problem"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2023/09/15/%E7%AC%AC%E4%BA%8C%E7%AB%A0/" title="A=B 第二章题解"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
