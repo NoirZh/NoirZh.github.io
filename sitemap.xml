@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://noirzh.github.io/about/index.html</loc>
-    
-    <lastmod>2023-11-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://noirzh.github.io/2023/08/01/%E9%A2%98%E8%A7%A3-%E8%8B%B1%E9%9B%84%E7%9A%84%E5%8A%9B%E9%87%8F/</loc>
     
     <lastmod>2023-11-12</lastmod>
@@ -21,6 +12,24 @@
   
   <url>
     <loc>https://noirzh.github.io/2023/11/11/My-New-Post/</loc>
+    
+    <lastmod>2023-11-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://noirzh.github.io/2023/11/01/translate_Efficient%20parallel%20branch-and-bound%20approaches%20for%20exact%20graph%20edit%20distance%20problem%20-%20%E5%89%AF%E6%9C%AC/</loc>
+    
+    <lastmod>2023-11-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://noirzh.github.io/about/index.html</loc>
     
     <lastmod>2023-11-12</lastmod>
     
@@ -56,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://noirzh.github.io/tags/index.html</loc>
+    <loc>https://noirzh.github.io/repository/index.html</loc>
     
     <lastmod>2023-11-11</lastmod>
     
@@ -65,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://noirzh.github.io/repository/index.html</loc>
+    <loc>https://noirzh.github.io/tags/index.html</loc>
     
     <lastmod>2023-11-11</lastmod>
     
@@ -118,6 +127,20 @@
   
   <url>
     <loc>https://noirzh.github.io/tags/A-B/</loc>
+    <lastmod>2023-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://noirzh.github.io/tags/%E8%AE%BA%E6%96%87/</loc>
+    <lastmod>2023-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://noirzh.github.io/tags/%E7%BF%BB%E8%AF%91/</loc>
     <lastmod>2023-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

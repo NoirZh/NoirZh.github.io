@@ -18,12 +18,12 @@
   
   
   <title>A=B 第二章题解 | 一共十七划</title>
-  <meta name="description" content="前言我们要好好理解一下a&#x3D;(return)b干了啥:  找到匹配的字符串a 将整个我们的字符串变成b 中断循环,看结果  换成函数表达就是  123if a in s:	s&#x3D;b	return s  之后判题的只能看到你返回的字符串b 2.1 你好世界这里给出来了一个提示,在我们用空等的时候 1&#x3D;(return)helloworld  2.2 AAA思路我们需要看a的数量,也就是说我们不用">
+  <meta name="description" content="前言 我们要好好理解一下a&#x3D;(return)b干了啥:  找到匹配的字符串a 将整个我们的字符串变成b 中断循环,看结果  换成函数表达就是 123if a in s:	s&#x3D;b	return s 之后判题的只能看到你返回的字符串b 2.1 你好世界 这里给出来了一个提示,在我们用空等的时候 1&#x3D;(return)helloworld 2.2 AAA 思路 我们需要看a的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="A&#x3D;B 第二章题解">
 <meta property="og:url" content="https://noirzh.github.io/2023/11/07/%E7%AC%AC%E4%BA%8C%E7%AB%A0/index.html">
 <meta property="og:site_name" content="一共十七划">
-<meta property="og:description" content="前言我们要好好理解一下a&#x3D;(return)b干了啥:  找到匹配的字符串a 将整个我们的字符串变成b 中断循环,看结果  换成函数表达就是  123if a in s:	s&#x3D;b	return s  之后判题的只能看到你返回的字符串b 2.1 你好世界这里给出来了一个提示,在我们用空等的时候 1&#x3D;(return)helloworld  2.2 AAA思路我们需要看a的数量,也就是说我们不用">
+<meta property="og:description" content="前言 我们要好好理解一下a&#x3D;(return)b干了啥:  找到匹配的字符串a 将整个我们的字符串变成b 中断循环,看结果  换成函数表达就是 123if a in s:	s&#x3D;b	return s 之后判题的只能看到你返回的字符串b 2.1 你好世界 这里给出来了一个提示,在我们用空等的时候 1&#x3D;(return)helloworld 2.2 AAA 思路 我们需要看a的">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-11-07T07:24:50.000Z">
 <meta property="article:modified_time" content="2023-11-11T08:48:45.921Z">
@@ -45,7 +45,119 @@
   
   
   
-<meta name="generator" content="Hexo 7.0.0"></head>
+<meta name="generator" content="Hexo 7.0.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 
 <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
@@ -198,7 +310,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/A-B/" rel="tag">A&#x3D;B</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag">题解</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/A-B/" rel="tag">A&#x3D;B</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BA%E6%96%87/" rel="tag">论文</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag">题解</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -208,7 +320,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/A-B/" style="font-size: 14px;">A=B</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/markdown/" style="font-size: 13px;">markdown</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 13px;">数学</a> <a href="/tags/%E9%A2%98%E8%A7%A3/" style="font-size: 13px;">题解</a>
+      <a href="/tags/A-B/" style="font-size: 14px;">A=B</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/markdown/" style="font-size: 13px;">markdown</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 13px;">数学</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 13px;">翻译</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 13px;">论文</a> <a href="/tags/%E9%A2%98%E8%A7%A3/" style="font-size: 13px;">题解</a>
     </div>
   </div>
 
@@ -217,7 +329,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -296,10 +408,10 @@
                 
               </p>
               <p class="item-title">
-                <a href="/2023/08/01/%E9%A2%98%E8%A7%A3-%E8%8B%B1%E9%9B%84%E7%9A%84%E5%8A%9B%E9%87%8F/" class="title">题解-英雄的力量</a>
+                <a href="/2023/11/01/translate_Efficient%20parallel%20branch-and-bound%20approaches%20for%20exact%20graph%20edit%20distance%20problem%20-%20%E5%89%AF%E6%9C%AC/" class="title">翻译:Efficient parallel branch-and-bound approaches for exact graph edit distance problem</a>
               </p>
               <p class="item-date">
-                <time datetime="2023-07-31T21:51:11.000Z" itemprop="datePublished">2023-08-01</time>
+                <time datetime="2023-11-01T13:04:50.000Z" itemprop="datePublished">2023-11-01</time>
               </p>
             </div>
           </li>
@@ -359,78 +471,86 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我们要好好理解一下a&#x3D;(return)b干了啥:</p>
-<ol>
+        <h2 id="前言">前言</h2>
+<p>我们要好好理解一下a=(return)b干了啥:</p>
+<ol type="1">
 <li>找到匹配的字符串a</li>
 <li>将整个我们的字符串变成b</li>
 <li>中断循环,看结果</li>
 </ol>
-<p>换成函数表达就是 </p>
+<p>换成函数表达就是</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> a <span class="keyword">in</span> s:</span><br><span class="line">	s=b</span><br><span class="line">	<span class="keyword">return</span> s</span><br></pre></td></tr></table></figure>
-
 <p>之后判题的只能看到你返回的字符串b</p>
-<h2 id="2-1-你好世界"><a href="#2-1-你好世界" class="headerlink" title="2.1 你好世界"></a>2.1 你好世界</h2><p>这里给出来了一个提示,在我们用空等的时候</p>
+<h2 id="21-你好世界">2.1 你好世界</h2>
+<p>这里给出来了一个提示,在我们用空等的时候</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">=(<span class="keyword">return</span>)helloworld</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-2-AAA"><a href="#2-2-AAA" class="headerlink" title="2.2 AAA"></a>2.2 AAA</h2><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>我们需要看a的数量,也就是说我们不用管b,c,将二者全消除之后剩下的就是a,再看其是否大于等于3个即可</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">b=</span><br><span class="line">c=</span><br><span class="line">aaa=(<span class="keyword">return</span>)true</span><br><span class="line">=(<span class="keyword">return</span>)false </span><br></pre></td></tr></table></figure>
-
-<h2 id="2-3-恰好三个"><a href="#2-3-恰好三个" class="headerlink" title="2.3 恰好三个"></a>2.3 恰好三个</h2><h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>不用管到底是哪个字符,我们只需要验证是不是三个字符即可,所以先把所有字符变成一样的,例如c</p>
+<h2 id="22-aaa">2.2 AAA</h2>
+<h3 id="思路">思路</h3>
+<p>我们需要看a的数量,也就是说我们不用管b,c,将二者全消除之后剩下的就是a,再看其是否大于等于3个即可</p>
+<h3 id="代码">代码</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">b=</span><br><span class="line">c=</span><br><span class="line">aaa=(<span class="keyword">return</span>)true</span><br><span class="line">=(<span class="keyword">return</span>)false </span><br></pre></td></tr></table></figure>
+<h2 id="23-恰好三个">2.3 恰好三个</h2>
+<h3 id="思路-1">思路</h3>
+<p>不用管到底是哪个字符,我们只需要验证是不是三个字符即可,所以先把所有字符变成一样的,例如c</p>
 <p>接下来我们要判断的不是<code>ccc=(return)true</code>,因为字符串<code>cccc</code>同样包含<code>ccc</code>,</p>
 <ul>
 <li>我们首先就排除掉大于3个字符的,其一定包含四个及以上的字符串</li>
 <li>这时候对只有三个字符的返回true</li>
 <li>剩下的也是false</li>
 </ul>
-<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a=c</span><br><span class="line">b=c</span><br><span class="line">cccc=(<span class="keyword">return</span>)false </span><br><span class="line">ccc=(<span class="keyword">return</span>)true  </span><br><span class="line">=(<span class="keyword">return</span>)false</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-4-余数"><a href="#2-4-余数" class="headerlink" title="2.4 余数"></a>2.4 余数</h2><h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>这个是return使用的一个示例,所以我们考虑的仍然是只关心字符串长度,不关心内容</p>
-<ol>
+<h3 id="代码-1">代码</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a=c</span><br><span class="line">b=c</span><br><span class="line">cccc=(<span class="keyword">return</span>)false </span><br><span class="line">ccc=(<span class="keyword">return</span>)true  </span><br><span class="line">=(<span class="keyword">return</span>)false</span><br></pre></td></tr></table></figure>
+<h2 id="24-余数">2.4 余数</h2>
+<h3 id="思路-2">思路</h3>
+<p>这个是return使用的一个示例,所以我们考虑的仍然是只关心字符串长度,不关心内容</p>
+<ol type="1">
 <li>将所有都替换成同样的字符</li>
 <li>发现求的事余3,我们只需要每次都将三个字符的串放空,剩下的字符串长度就是总长度余3的结果</li>
 <li>将长度换成数字</li>
 </ol>
-<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><p>这个思路在后续也有用</p>
+<h3 id="代码-2">代码</h3>
+<p>这个思路在后续也有用</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a=c</span><br><span class="line">b=c </span><br><span class="line">ccc=           </span><br><span class="line">cc=(<span class="keyword">return</span>)<span class="number">2</span></span><br><span class="line">c=(<span class="keyword">return</span>)<span class="number">1</span></span><br><span class="line">=(<span class="keyword">return</span>)<span class="number">0</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="2-5-奇数"><a href="#2-5-奇数" class="headerlink" title="2.5 奇数"></a>2.5 奇数</h2><h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3><h4 id="划分问题"><a href="#划分问题" class="headerlink" title="划分问题"></a>划分问题</h4><p>终于开始上难度了,但是这个 思想其实不难理解,我们先做一个简单的想法,我如何判断一长串a是否由奇数组成?</p>
-<ol>
-<li>考虑到字符串长度为1&lt;&#x3D;n&lt;&#x3D;7,很容易知道0,1,3,5,7为可能的长度</li>
+<h2 id="25-奇数">2.5 奇数</h2>
+<h3 id="思路-3">思路</h3>
+<h4 id="划分问题">划分问题</h4>
+<p>终于开始上难度了,但是这个
+思想其实不难理解,我们先做一个简单的想法,我如何判断一长串a是否由奇数组成?</p>
+<ol type="1">
+<li>考虑到字符串长度为1&lt;=n&lt;=7,很容易知道0,1,3,5,7为可能的长度</li>
 <li>暴力枚举虽好,但是长度有点太大了,我们可以用另一个方法:奇数减去2之后仍然为奇数</li>
-<li>所以我们很容易想到<code>aaa=a</code>来清理串,为什么不能是<code>aa=</code>?<ol>
+<li>所以我们很容易想到<code>aaa=a</code>来清理串,为什么不能是<code>aa=</code>?
+<ol type="1">
 <li>因为这样没有办法确认是刚开始就没有a,还是被偶数a消除掉的</li>
-</ol>
-</li>
+</ol></li>
 <li>此时长度0,1,2,只有2表示原串是偶数</li>
 </ol>
-<h4 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h4><p>然后我们知道要去做什么了:把三个字符串相同的集中在一起,相当于按顺序再为这三个字符轮流做上述检查操作</p>
+<h4 id="做法">做法</h4>
+<p>然后我们知道要去做什么了:把三个字符串相同的集中在一起,相当于按顺序再为这三个字符轮流做上述检查操作</p>
 <p>所以需要排序,让相同字符待在一起</p>
 <p>接下来问题就好解决了</p>
-<h3 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ba=ab</span><br><span class="line">cb=bc</span><br><span class="line">ca=ac</span><br><span class="line">aaa=a</span><br><span class="line">bbb=b</span><br><span class="line">ccc=c</span><br><span class="line">aa=(<span class="keyword">return</span>)false</span><br><span class="line">bb=(<span class="keyword">return</span>)false</span><br><span class="line">cc=(<span class="keyword">return</span>)false</span><br><span class="line">=(<span class="keyword">return</span>)true</span><br></pre></td></tr></table></figure>
-
-<h3 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h3><p>你肯定要回来看的,如果你看不懂2.6的话</p>
+<h3 id="代码-3">代码</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ba=ab</span><br><span class="line">cb=bc</span><br><span class="line">ca=ac</span><br><span class="line">aaa=a</span><br><span class="line">bbb=b</span><br><span class="line">ccc=c</span><br><span class="line">aa=(<span class="keyword">return</span>)false</span><br><span class="line">bb=(<span class="keyword">return</span>)false</span><br><span class="line">cc=(<span class="keyword">return</span>)false</span><br><span class="line">=(<span class="keyword">return</span>)true</span><br></pre></td></tr></table></figure>
+<h3 id="进阶">进阶</h3>
+<p>你肯定要回来看的,如果你看不懂2.6的话</p>
 <p>发现了什么?我们将同样的情况循环了3遍,也就是说,在单独讨论的时候a,b,c其实是等价的,有没有什么办法将它们的等价用代码解释出来?</p>
 <p>一个很有趣的想法是将b,c转换成等价a,最后判断三段a是否都满足奇数</p>
 <p>一点点魔法:设置一个障碍,让所有相邻相同的字母没有障碍,而让不同的字母之间有障碍</p>
 <p>考虑如下代码的运作</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ba=ab</span><br><span class="line">cb=bc</span><br><span class="line">ca=ac</span><br><span class="line">b=xxax</span><br><span class="line">c=xaxx</span><br></pre></td></tr></table></figure>
-
 <p>这种情况下会发生什么:相邻的b变成了中间隔着3个x的a,不同字母之间隔着2个x</p>
 <p>更加显式地能看到假设 bacacc:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">aabccc</span><br><span class="line">-&gt; aaxxaxxxaxxxaxxxaxx</span><br><span class="line">-&gt; a|a| xxax |xaxx|xaxx|xaxx</span><br></pre></td></tr></table></figure>
-
 <p>仔细观察,发现相隔3个x的都能去掉!,此时会变成用两个x阻隔的三个段,每个段里面的a的个数是a或b或c的个数,此时<code>bacacc</code>变成<code>aaxxaxxaaaxx</code></p>
 <p>然后判断即可</p>
 <p>得出来新的代码如下</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ba=ab</span><br><span class="line">cb=bc</span><br><span class="line">ca=ac</span><br><span class="line">b=xxax</span><br><span class="line">c=xaxx</span><br><span class="line">xxx=</span><br><span class="line">aaa=a <span class="comment">#等价处理</span></span><br><span class="line">aa=(<span class="keyword">return</span>)false</span><br><span class="line">=(<span class="keyword">return</span>)true</span><br></pre></td></tr></table></figure>
-
 <p>这种等价思想很重要,在之后会多次使用</p>
 <p>其实这种等价想法在于什么:在于让相同字母之间的间隔一样,不同字母的间隔不一样,以这种思路你完全可以设计如下方法:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#其中()表示重复几次</span></span><br><span class="line">b=x(n)ax(m)</span><br><span class="line"><span class="comment">#则c和b之间的距离也应为n,b和b之间距离为m+n</span></span><br><span class="line"><span class="comment">#所以</span></span><br><span class="line">c=x(n-m)ax(2m)</span><br><span class="line"><span class="comment">#符合以上要求的都可以替换</span></span><br><span class="line"><span class="comment">#比如以下代码n=6,m=3,一样可以通过</span></span><br><span class="line">ba=ab</span><br><span class="line">cb=bc</span><br><span class="line">ca=ac</span><br><span class="line">b=xxxxxxaxxx</span><br><span class="line">c=xxxaxxxxxx</span><br><span class="line">xxxxxxxxx=</span><br><span class="line">aaa=a</span><br><span class="line">aa=(<span class="keyword">return</span>)false</span><br><span class="line">=(<span class="keyword">return</span>)true</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="2-6-独一无二"><a href="#2-6-独一无二" class="headerlink" title="2.6 独一无二"></a>2.6 独一无二</h2><h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><p>这里建议先看一下上面的拓展</p>
+<h2 id="26-独一无二">2.6 独一无二</h2>
+<h3 id="思路-4">思路</h3>
+<p>这里建议先看一下上面的拓展</p>
 <p>然后我们先翻译一下题目:希望这个长字符串出现的单字符字符串有且只有一个:</p>
 <ul>
 <li>aaabccc:只有一个a,是我们需要的</li>
@@ -439,7 +559,7 @@
 </ul>
 <p>我们只需要知道是不是等于1</p>
 <p>和上题拓展法类似,我们等价之后再做类似操作,现在得出来的因为没有排序,我们现在能保证的是</p>
-<ol>
+<ol type="1">
 <li>相同字母之间x个数为0或者3</li>
 <li>不同字母之间x个数为1或者2</li>
 </ol>
@@ -449,37 +569,38 @@
 <p>看到a就return肯定不行,但是我们能先把多个a存在的删掉,其格式一定为<code>axaxa</code>之类,因为我们上述操作不相同的单字符串串之间一定有一个x阻隔</p>
 <p>这时候就有只剩下a的情况了,此时是我们想要的</p>
 <p>剩下的情况就是全是长串,也是我们不想要的</p>
-<h3 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">b=xxax</span><br><span class="line">c=xaxx</span><br><span class="line">xxx= <span class="comment">#这之后相邻的同字符的串就是相邻的a</span></span><br><span class="line">xx=x <span class="comment">#此时不同串之间相差1x</span></span><br><span class="line">aaa=aa </span><br><span class="line">aa= <span class="comment">#两步除长串</span></span><br><span class="line">axa=(<span class="keyword">return</span>)false</span><br><span class="line">a=(<span class="keyword">return</span>)true</span><br><span class="line">=(<span class="keyword">return</span>)false</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-7上升"><a href="#2-7上升" class="headerlink" title="2.7上升"></a>2.7上升</h2><h3 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h3><p>排序</p>
-<ol>
+<h3 id="代码-4">代码</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">b=xxax</span><br><span class="line">c=xaxx</span><br><span class="line">xxx= <span class="comment">#这之后相邻的同字符的串就是相邻的a</span></span><br><span class="line">xx=x <span class="comment">#此时不同串之间相差1x</span></span><br><span class="line">aaa=aa </span><br><span class="line">aa= <span class="comment">#两步除长串</span></span><br><span class="line">axa=(<span class="keyword">return</span>)false</span><br><span class="line">a=(<span class="keyword">return</span>)true</span><br><span class="line">=(<span class="keyword">return</span>)false</span><br></pre></td></tr></table></figure>
+<h2 id="27上升">2.7上升</h2>
+<h3 id="思路-5">思路</h3>
+<p>排序</p>
+<ol type="1">
 <li>做之后还会有效的两两对比</li>
 <li>先确定是不是c比d多,再确定是不是b比a多</li>
 <li>建议先看下面的两个</li>
 </ol>
-<h3 id="实现上面的体现"><a href="#实现上面的体现" class="headerlink" title="实现上面的体现"></a>实现上面的体现</h3><ol>
+<h3 id="实现上面的体现">实现上面的体现</h3>
+<ol type="1">
 <li>c比b多则b全部化为d,此时还有c剩余</li>
 <li>d比a多则a全消失,d还有剩余</li>
 <li>也就是说dc存在的时候其实是(bcc)还有剩,合法性足够强</li>
-<li>我或许需要一些更加显然的理解,但是现在没有…以后可能试试</li>
+<li>我或许需要一些更加显然的理解,但是现在没有...以后可能试试</li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ca=ac</span><br><span class="line">cb=bc</span><br><span class="line">ba=ab <span class="comment">#先排序</span></span><br><span class="line">bc=d   <span class="comment">#合法情况是adc</span></span><br><span class="line">bd=db  <span class="comment">#此时d代表的是bc</span></span><br><span class="line">ad=    <span class="comment">#消去abc 此时如果合法一定是dc</span></span><br><span class="line">dc=(<span class="keyword">return</span>)true</span><br><span class="line">=(<span class="keyword">return</span>)false <span class="comment">#其他就都不合法</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="2-8最多"><a href="#2-8最多" class="headerlink" title="2.8最多"></a>2.8最多</h2><h3 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h3><ol>
+<h2 id="28最多">2.8最多</h2>
+<h3 id="思路-6">思路</h3>
+<ol type="1">
 <li>对于这种考虑总体字母的,我们先把他们放在一起,先排序</li>
 <li>我们考虑到排序,所以我们只要比较三者的多少,很明显能考虑到两两对比</li>
 <li>接下来我们最好看代码讲解</li>
 </ol>
-<h3 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ca=ac</span><br><span class="line">cb=bc</span><br><span class="line">ba=ab <span class="comment">#先排序</span></span><br><span class="line"></span><br><span class="line">bc=d    </span><br><span class="line">bd=db  <span class="comment">#此时d代表的是bc</span></span><br><span class="line">ad=    <span class="comment">#消去abc,接下来剩下的就只有一个或两个字母,一定,而且不是bc,把三种组合罗列一下就是结果,只有一个字母显然是答案</span></span><br><span class="line">ac=</span><br><span class="line">ab=</span><br><span class="line"></span><br><span class="line">a=(<span class="keyword">return</span>)a</span><br><span class="line">b=(<span class="keyword">return</span>)b</span><br><span class="line">c=(<span class="keyword">return</span>)c</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-9最少"><a href="#2-9最少" class="headerlink" title="2.9最少"></a>2.9最少</h2><h3 id="思路-7"><a href="#思路-7" class="headerlink" title="思路"></a>思路</h3><p>思路与上面的类似</p>
+<h3 id="代码-5">代码</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ca=ac</span><br><span class="line">cb=bc</span><br><span class="line">ba=ab <span class="comment">#先排序</span></span><br><span class="line"></span><br><span class="line">bc=d    </span><br><span class="line">bd=db  <span class="comment">#此时d代表的是bc</span></span><br><span class="line">ad=    <span class="comment">#消去abc,接下来剩下的就只有一个或两个字母,一定,而且不是bc,把三种组合罗列一下就是结果,只有一个字母显然是答案</span></span><br><span class="line">ac=</span><br><span class="line">ab=</span><br><span class="line"></span><br><span class="line">a=(<span class="keyword">return</span>)a</span><br><span class="line">b=(<span class="keyword">return</span>)b</span><br><span class="line">c=(<span class="keyword">return</span>)c</span><br></pre></td></tr></table></figure>
+<h2 id="29最少">2.9最少</h2>
+<h3 id="思路-7">思路</h3>
+<p>思路与上面的类似</p>
 <p>直接看代码吧</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ca=ac</span><br><span class="line">cb=bc</span><br><span class="line">ba=ab <span class="comment">#先排序</span></span><br><span class="line"></span><br><span class="line">ab=d</span><br><span class="line">db=bd</span><br><span class="line">dc=  <span class="comment">#销去了abc,可能剩下ad,ac,bc</span></span><br><span class="line"> </span><br><span class="line">d=(<span class="keyword">return</span>)c <span class="comment">#d存在说明d比c多,也就是ab组合都比c多</span></span><br><span class="line">ac=(<span class="keyword">return</span>)b </span><br><span class="line">bc=(<span class="keyword">return</span>)a</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
 
       
     </div>

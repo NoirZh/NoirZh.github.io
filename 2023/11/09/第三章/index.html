@@ -18,12 +18,12 @@
   
   
   <title>A=B 第三章题解 | 一共十七划</title>
-  <meta name="description" content="前言这个关键字相当于在找到特定的子字符串之后,删去该子字符串,并且将我们指定的新字符串插入到原字符串的开头与结尾 类似于正则表达式的^与$的应用 很像是我们在第二章的操作:将字母压之后换成其他字母往后排以使得压缩持续进行 3-1 去除相当简单的教程 12(start)a&#x3D;(end)a&#x3D;  3-2 旋转这里只针对前面不是a进行操作,可以保证 12(start)b&#x3D;(end)b(start)c&#x3D;(en">
+  <meta name="description" content="前言 这个关键字相当于在找到特定的子字符串之后,删去该子字符串,并且将我们指定的新字符串插入到原字符串的开头与结尾 类似于正则表达式的^与$的应用 很像是我们在第二章的操作:将字母压之后换成其他字母往后排以使得压缩持续进行  3-1 去除 相当简单的教程 12(start)a&#x3D;(end)a&#x3D; 3-2 旋转 这里只针对前面不是a进行操作,可以保证 12(start)b&#x3D;(end)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="A&#x3D;B 第三章题解">
 <meta property="og:url" content="https://noirzh.github.io/2023/11/09/%E7%AC%AC%E4%B8%89%E7%AB%A0/index.html">
 <meta property="og:site_name" content="一共十七划">
-<meta property="og:description" content="前言这个关键字相当于在找到特定的子字符串之后,删去该子字符串,并且将我们指定的新字符串插入到原字符串的开头与结尾 类似于正则表达式的^与$的应用 很像是我们在第二章的操作:将字母压之后换成其他字母往后排以使得压缩持续进行 3-1 去除相当简单的教程 12(start)a&#x3D;(end)a&#x3D;  3-2 旋转这里只针对前面不是a进行操作,可以保证 12(start)b&#x3D;(end)b(start)c&#x3D;(en">
+<meta property="og:description" content="前言 这个关键字相当于在找到特定的子字符串之后,删去该子字符串,并且将我们指定的新字符串插入到原字符串的开头与结尾 类似于正则表达式的^与$的应用 很像是我们在第二章的操作:将字母压之后换成其他字母往后排以使得压缩持续进行  3-1 去除 相当简单的教程 12(start)a&#x3D;(end)a&#x3D; 3-2 旋转 这里只针对前面不是a进行操作,可以保证 12(start)b&#x3D;(end)">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-11-09T15:04:20.000Z">
 <meta property="article:modified_time" content="2023-11-11T08:49:46.752Z">
@@ -45,7 +45,119 @@
   
   
   
-<meta name="generator" content="Hexo 7.0.0"></head>
+<meta name="generator" content="Hexo 7.0.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 
 <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
@@ -198,7 +310,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/A-B/" rel="tag">A&#x3D;B</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag">题解</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/A-B/" rel="tag">A&#x3D;B</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BA%E6%96%87/" rel="tag">论文</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag">题解</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -208,7 +320,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/A-B/" style="font-size: 14px;">A=B</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/markdown/" style="font-size: 13px;">markdown</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 13px;">数学</a> <a href="/tags/%E9%A2%98%E8%A7%A3/" style="font-size: 13px;">题解</a>
+      <a href="/tags/A-B/" style="font-size: 14px;">A=B</a> <a href="/tags/Python/" style="font-size: 13px;">Python</a> <a href="/tags/markdown/" style="font-size: 13px;">markdown</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 13px;">数学</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 13px;">翻译</a> <a href="/tags/%E8%AE%BA%E6%96%87/" style="font-size: 13px;">论文</a> <a href="/tags/%E9%A2%98%E8%A7%A3/" style="font-size: 13px;">题解</a>
     </div>
   </div>
 
@@ -217,7 +329,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">八月 2023</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -296,10 +408,10 @@
                 
               </p>
               <p class="item-title">
-                <a href="/2023/08/01/%E9%A2%98%E8%A7%A3-%E8%8B%B1%E9%9B%84%E7%9A%84%E5%8A%9B%E9%87%8F/" class="title">题解-英雄的力量</a>
+                <a href="/2023/11/01/translate_Efficient%20parallel%20branch-and-bound%20approaches%20for%20exact%20graph%20edit%20distance%20problem%20-%20%E5%89%AF%E6%9C%AC/" class="title">翻译:Efficient parallel branch-and-bound approaches for exact graph edit distance problem</a>
               </p>
               <p class="item-date">
-                <time datetime="2023-07-31T21:51:11.000Z" itemprop="datePublished">2023-08-01</time>
+                <time datetime="2023-11-01T13:04:50.000Z" itemprop="datePublished">2023-11-01</time>
               </p>
             </div>
           </li>
@@ -349,7 +461,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/11/09/%E7%AC%AC%E4%B8%89%E7%AB%A0/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 850(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 849(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3(分)</span>
@@ -359,40 +471,46 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这个关键字相当于在找到特定的子字符串之后,删去该子字符串,并且将我们指定的新字符串插入到原字符串的开头与结尾</p>
+        <h2 id="前言">前言</h2>
+<p>这个关键字相当于在找到特定的子字符串之后,删去该子字符串,并且将我们指定的新字符串插入到原字符串的开头与结尾</p>
 <p>类似于正则表达式的^与$的应用</p>
 <p>很像是我们在第二章的操作:将字母压之后换成其他字母往后排以使得压缩持续进行</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="3-1-去除"><a href="#3-1-去除" class="headerlink" title="3-1 去除"></a>3-1 去除</h2><p>相当简单的教程</p>
+<h2 id="section"></h2>
+<h2 id="3-1-去除">3-1 去除</h2>
+<p>相当简单的教程</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(start)a=</span><br><span class="line">(end)a=</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-2-旋转"><a href="#3-2-旋转" class="headerlink" title="3-2 旋转"></a>3-2 旋转</h2><p>这里只针对前面不是a进行操作,可以保证</p>
+<h2 id="3-2-旋转">3-2 旋转</h2>
+<p>这里只针对前面不是a进行操作,可以保证</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(start)b=(end)b</span><br><span class="line">(start)c=(end)c</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-3-A到B-2"><a href="#3-3-A到B-2" class="headerlink" title="3-3 A到B 2"></a>3-3 A到B 2</h2><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>开始上难度了,但是其实不难,我们只需要先把所有特定位置的a变成特殊的,然后再处理另一边的特殊的即可</p>
+<h2 id="3-3-a到b-2">3-3 A到B 2</h2>
+<h3 id="思路">思路</h3>
+<p>开始上难度了,但是其实不难,我们只需要先把所有特定位置的a变成特殊的,然后再处理另一边的特殊的即可</p>
 <p>就像是我们之前做过的一样,此时的代码如下</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(start)a=x</span><br><span class="line">xa=ax</span><br><span class="line">(end)a=z</span><br><span class="line">az=za</span><br><span class="line">x=b</span><br><span class="line">z=b</span><br></pre></td></tr></table></figure>
-
-<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><p>我们很容易注意到我们的xa&#x3D;ax或者之类的操作只是把所有符合要求的串找出来,保证不阻塞生成</p>
+<h3 id="优化">优化</h3>
+<p>我们很容易注意到我们的xa=ax或者之类的操作只是把所有符合要求的串找出来,保证不阻塞生成</p>
 <p>于是我们注意到移到另一边的位置显然更好(指行数更小),更新之后如下</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(start)a=(end)x</span><br><span class="line">(end)x=(start)b</span><br><span class="line">(end)a=(start)x</span><br><span class="line">(start)x=(end)b</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-5-首尾"><a href="#3-5-首尾" class="headerlink" title="3-5 首尾"></a>3-5 首尾</h2><p>通过上一题我们就知道弄到尾部直接判断即可</p>
+<h3 id="代码">代码</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(start)a=(end)x</span><br><span class="line">(end)x=(start)b</span><br><span class="line">(end)a=(start)x</span><br><span class="line">(start)x=(end)b</span><br></pre></td></tr></table></figure>
+<h2 id="3-5-首尾">3-5 首尾</h2>
+<p>通过上一题我们就知道弄到尾部直接判断即可</p>
 <p>我们唯一要注意的就是判断在前,不然容易出死循环</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ax=(return)true #有任意一个就是真的,能迅速检查到</span><br><span class="line">by=(return)true</span><br><span class="line">cz=(return)true</span><br><span class="line"></span><br><span class="line">#以下的操作会1.在有相同的时候把除了最后一个字母之外都换成其他字母插入到后面 2.没有相同的时候所有都插入到后面</span><br><span class="line">(start)a=(end)x</span><br><span class="line">(start)b=(end)y</span><br><span class="line">(start)c=(end)z</span><br><span class="line">=(return)false</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-6-最多-2"><a href="#3-6-最多-2" class="headerlink" title="3-6 最多 2"></a>3-6 最多 2</h2><h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><p>与之前的类似,但是我们需要保留所有作比较的字母来保证恢复,然后这里其实就可以</p>
+<h2 id="3-6-最多-2">3-6 最多 2</h2>
+<h2 id="思路-1">思路</h2>
+<p>与之前的类似,但是我们需要保留所有作比较的字母来保证恢复,然后这里其实就可以</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ca=ac</span><br><span class="line">cb=bc</span><br><span class="line">ba=ab</span><br><span class="line">ab=(end)x</span><br><span class="line">cx=(end)y #y代表abc,可随时换成最多的 #剩下ac和bc</span><br><span class="line">#之后我们不用关心y具体是什么,只要二者消耗,剩下的那个做全员回复就行</span><br><span class="line"></span><br><span class="line">ac=(end)y</span><br><span class="line">bc=(end)y</span><br><span class="line">#做一个穷举</span><br><span class="line">ax=aa</span><br><span class="line">cy=cc</span><br><span class="line">by=bb</span><br><span class="line">ay=aa</span><br><span class="line">bx=bb</span><br></pre></td></tr></table></figure>
-
-<h3 id="优化-1"><a href="#优化-1" class="headerlink" title="优化"></a>优化</h3><p>发现ax,ay的行为是相同的,bx,by也是,优化以下</p>
+<h3 id="优化-1">优化</h3>
+<p>发现ax,ay的行为是相同的,bx,by也是,优化以下</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ca=ac</span><br><span class="line">cb=bc</span><br><span class="line">ba=ab</span><br><span class="line">ab=(end)x</span><br><span class="line">cx=(end)y #y代表abc,可随时换成最多的</span><br><span class="line">#acy bcy ay by cy </span><br><span class="line"></span><br><span class="line">ac=(end)y</span><br><span class="line">bc=(end)y</span><br><span class="line">x=y</span><br><span class="line">cy=cc</span><br><span class="line">by=bb</span><br><span class="line">ay=a</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-7回文串"><a href="#3-7回文串" class="headerlink" title="3-7回文串"></a>3-7回文串</h2><h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>判断是不是消除之后全空即可,如3-5的加强版,我们进行全局替换,然后穷举非空情况,但是注意我们不用考虑剩下来的单个字母的情况,因为那种情况也属于回文串</p>
+<h2 id="3-7回文串">3-7回文串</h2>
+<h3 id="思路-2">思路</h3>
+<p>判断是不是消除之后全空即可,如3-5的加强版,我们进行全局替换,然后穷举非空情况,但是注意我们不用考虑剩下来的单个字母的情况,因为那种情况也属于回文串</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">cz=</span><br><span class="line">by=</span><br><span class="line">ax=</span><br><span class="line">(start)a=(end)x</span><br><span class="line">(start)b=(end)y</span><br><span class="line">(start)c=(end)z</span><br><span class="line">xy=(<span class="keyword">return</span>)false</span><br><span class="line">xz=(<span class="keyword">return</span>)false</span><br><span class="line">yx=(<span class="keyword">return</span>)false</span><br><span class="line">yz=(<span class="keyword">return</span>)false</span><br><span class="line">zx=(<span class="keyword">return</span>)false</span><br><span class="line">zy=(<span class="keyword">return</span>)false</span><br><span class="line">=(<span class="keyword">return</span>)true</span><br></pre></td></tr></table></figure>
-
-<h3 id="挑战优化"><a href="#挑战优化" class="headerlink" title="挑战优化"></a>挑战优化</h3><p>注意到我们六行代码目的都只是为了判断是否有两个字母及以上存在</p>
+<h3 id="挑战优化">挑战优化</h3>
+<p>注意到我们六行代码目的都只是为了判断是否有两个字母及以上存在</p>
 <p>修改字符串使之存在首尾标识符即可,也就是说能保证显示出来两个字母不同且存在</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cuZn=</span><br><span class="line">buYn=</span><br><span class="line">auXn=</span><br><span class="line">(start)a=(end)uXn</span><br><span class="line">(start)b=(end)uYn #不影响排空</span><br><span class="line">(start)c=(end)uZn</span><br><span class="line">nu=(return)false  #出现这个说明仍有多个字母存在,整个字符串非空,</span><br><span class="line">=(return)true</span><br></pre></td></tr></table></figure>
-
 
       
     </div>
