@@ -110,4 +110,34 @@
     
   </entry>
   
+  <entry>
+    <title>题解-英雄的力量</title>
+    <link href="https://noirzh.github.io/2023/08/01/%E9%A2%98%E8%A7%A3-%E8%8B%B1%E9%9B%84%E7%9A%84%E5%8A%9B%E9%87%8F/"/>
+    <id>https://noirzh.github.io/2023/08/01/%E9%A2%98%E8%A7%A3-%E8%8B%B1%E9%9B%84%E7%9A%84%E5%8A%9B%E9%87%8F/</id>
+    <published>2023-07-31T21:51:11.000Z</published>
+    <updated>2023-11-12T01:54:41.201Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Problem: <a href="https://leetcode.cn/problems/power-of-heroes/description/">2681. 英雄的力量</a></p></blockquote><p>[TOC]</p><h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><ul><li>选取与顺序无关先排序</li><li>接下来只要枚举所有子序列的最大值的平方和最小值的乘积之和</li><li>注意到只和最大值和最小值有关</li></ul><h1 id="解题方法"><a href="#解题方法" class="headerlink" title="解题方法"></a>解题方法</h1><ol><li>确定了子序列的最大值之后,我们只需要确定子序列里面各个值最小值出现了几次</li><li>也就是确定排序后的$nums[i]$必选且为最大值时,我们假设此时在答案中与除自身之外他的平方相乘的所有值之和为$pre_i$,此时有答案$res_i&#x3D;nums[i]^2*(pre_i+nums[i])$</li><li>不去管$pre_i$现在为多少,我们假设现在要选取的是$nums[i+1]$为最大值,则注意到对于子序列<ol><li>如果不选$nums[i]$,$pre_i$也会和$nums[i+1]$相乘</li><li>如果选取$nums[i]$,对于所有$nums[i]$不是最小值的情况,$pre_i$也会和$nums[i+1]$相乘,而$nums[i]$是最小值的情况只有一个(也就是选取$i$和$i+1$两个)</li></ol></li><li>根据以上的两个推理,我们能够得出$res_{i+1}&#x3D;nums[i+1]^2*(pre_i<em>2+nums[i]+nums[i+1])$,既$pre_{i+1}&#x3D;pre_i</em>2+nums[i]$</li><li>$res&#x3D;\displaystyle\sum^{n}_{i&#x3D;0} res_i$</li></ol><ul><li>时间复杂度$O(nlogn)$</li><li>空间复杂度$O(1)$</li></ul><h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def sumOfPower(self, nums: List[int]) -&gt; int:</span><br><span class="line">        mod=1000000007</span><br><span class="line">        nums.sort()</span><br><span class="line">        pre=0</span><br><span class="line">        res=0</span><br><span class="line">        for num in nums:</span><br><span class="line">            res=(res+(pre+num)*(num**2))%mod</span><br><span class="line">            pre=(pre*2+num)%mod</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">sumOfPower</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">const</span> <span class="type">int</span> mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line">        <span class="built_in">sort</span>(nums.<span class="built_in">begin</span>(),nums.<span class="built_in">end</span>());</span><br><span class="line">        <span class="type">int</span> res=<span class="number">0</span>,pre=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">long</span> num:nums)&#123;</span><br><span class="line">            res=(res+(num*num%mod)*(pre+num))%mod;</span><br><span class="line">            pre=(pre*<span class="number">2</span>+num)%mod;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Problem: &lt;a href=&quot;https://leetcode.cn/problems/power-of-heroes/description/&quot;&gt;2681. 英雄的力量&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;[TOC]&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+    <category term="题解" scheme="https://noirzh.github.io/tags/%E9%A2%98%E8%A7%A3/"/>
+    
+    <category term="Python" scheme="https://noirzh.github.io/tags/Python/"/>
+    
+    <category term="数学" scheme="https://noirzh.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
+  
 </feed>
