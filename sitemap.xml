@@ -2,6 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://noirzh.github.io/2023/07/22/%E5%B0%8F%E8%AF%B4-%E6%B0%B8%E4%B8%8D%E6%94%BE%E5%BC%83/</loc>
+    
+    <lastmod>2023-11-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://noirzh.github.io/2023/02/05/%E6%9D%82%E8%B0%88-%E5%85%83%E5%AE%B5%E8%8A%82/</loc>
+    
+    <lastmod>2023-11-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://noirzh.github.io/2023/01/02/%E5%B0%8F%E8%AF%B4-%E7%84%9A%E9%B1%BC%E6%88%90%E7%81%B0/</loc>
+    
+    <lastmod>2023-11-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://noirzh.github.io/2022/11/30/%E5%B0%8F%E8%AF%B4-%E6%98%9F%E9%99%85%E6%97%B6%E4%BB%A3/</loc>
+    
+    <lastmod>2023-11-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://noirzh.github.io/2022/10/30/My-New-Post/</loc>
     
     <lastmod>2023-11-12</lastmod>
@@ -164,7 +200,7 @@
   </url>
   
   <url>
-    <loc>https://noirzh.github.io/categories/index.html</loc>
+    <loc>https://noirzh.github.io/books/index.html</loc>
     
     <lastmod>2023-11-11</lastmod>
     
@@ -173,7 +209,7 @@
   </url>
   
   <url>
-    <loc>https://noirzh.github.io/books/index.html</loc>
+    <loc>https://noirzh.github.io/categories/index.html</loc>
     
     <lastmod>2023-11-11</lastmod>
     
@@ -192,6 +228,20 @@
   
   <url>
     <loc>https://noirzh.github.io/tags/markdown/</loc>
+    <lastmod>2023-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://noirzh.github.io/tags/%E5%B0%8F%E8%AF%B4/</loc>
+    <lastmod>2023-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://noirzh.github.io/tags/%E6%9D%82%E8%B0%88/</loc>
     <lastmod>2023-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
