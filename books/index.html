@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   
+  <meta name="referrer" content="never">
+  
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
   <meta name="renderer" content="webkit">
@@ -164,6 +166,8 @@
     	
         <li><a href="https://github.com/NoirZh" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
         
+        <li><a href="https://leetcode.cn/u/noir_z/" target="_blank" title="Leetcode" data-toggle=tooltip data-placement=top><i class="icon icon-leetcode"></i></a></li>
+        
         <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
         
     </ul>
@@ -315,7 +319,7 @@
   <article class="article article-links article-type-list" itemscope="">
   <header class="article-header">
     <h1 itemprop="title">书单</h1>
-    <p class="text-muted">个人收藏的书单推荐给大家 <a href="https://www.douban.com/people//" target="_blank">[我的豆瓣]</a></p>
+    <p class="text-muted">个人收藏的书单推荐给大家 <a href="https://www.douban.com/people/一共十七划/" target="_blank">[我的豆瓣]</a></p>
     <nav role="navigation" id="nav-main" class="okayNav">
       <ul id="tabs">
         <li><a id="reading-tab" href="javascript:show('reading')" rel="external">在读<span id="reading-total"></span></a></li>
@@ -356,6 +360,8 @@
     <ul class="social-links">
     	
         <li><a href="https://github.com/NoirZh" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://leetcode.cn/u/noir_z/" target="_blank" title="Leetcode" data-toggle=tooltip data-placement=top><i class="icon icon-leetcode"></i></a></li>
         
         <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
         
@@ -436,7 +442,7 @@ function show(id) {
   function loadDoubanCollections() {
     var _this = this;
     // https://api.douban.com/v2/book/user/:name/collections?start=0&count=100
-    var url = "https://api.douban.com/v2/book/user//collections"
+    var url = "https://api.douban.com/v2/book/user/一共十七划/collections"
     $.ajax({
       url: url,
       type: 'GET',
