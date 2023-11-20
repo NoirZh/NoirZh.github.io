@@ -21,8 +21,8 @@ https://noirzh.github.io/2023/08/01/%E9%A2%98%E8%A7%A3-%E8%8B%B1%E9%9B%84%E7%9A%
 https://noirzh.github.io/repository/index.html
 https://noirzh.github.io/tags/index.html
 https://noirzh.github.io/links/index.html
-https://noirzh.github.io/categories/index.html
 https://noirzh.github.io/books/index.html
+https://noirzh.github.io/categories/index.html
 https://noirzh.github.io/
 https://noirzh.github.io/tags/markdown/
 https://noirzh.github.io/tags/%E8%AE%BA%E6%96%87/
