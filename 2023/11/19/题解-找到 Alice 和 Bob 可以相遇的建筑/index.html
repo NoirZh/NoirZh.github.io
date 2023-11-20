@@ -26,7 +26,7 @@
 <meta property="og:description" content="Problem: 100110. 找到 Alice 和 Bob 可以相遇的建筑  [TOC] 思路  分解一下题目,发现和Alice和Bob二人顺序没关系,为了方便,我们假设Alice所在建筑位置在左边,称为a,bob就会在右边,称为b 假设a,b相等,则所在的位置就是b 若b所在高度大于a,则答案是b 剩下的就是我们要考虑的一般情况:b的高度小于a,  解题方法">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-11-19T06:51:17.000Z">
-<meta property="article:modified_time" content="2023-11-20T12:18:04.967Z">
+<meta property="article:modified_time" content="2023-11-20T15:04:23.899Z">
 <meta property="article:author" content="Noir">
 <meta property="article:tag" content="题解">
 <meta property="article:tag" content="Python">
@@ -559,20 +559,17 @@ mjx-container[display="true"] + br {
 <li>剩下的就是我们要考虑的一般情况:b的高度小于a,</li>
 </ul>
 <h2 id="解题方法">解题方法</h2>
-<ul>
-<li>我们要做的明确,查b的右侧大于a的第一个建筑</li>
-<li>每次都向后查询显然时间复杂度不够,遍历q又是必须的,所以我们想把这个查询压到log级别</li>
-<li>显然可以通过维护右侧单调栈+二分的模式
+<ol type="1">
+<li><p>我们要做的明确,查b的右侧大于a的第一个建筑</p></li>
+<li><p>每次都向后查询显然时间复杂度不够,遍历q又是必须的,所以我们想把这个查询压到log级别</p></li>
+<li><p>显然可以通过维护右侧单调栈+二分的模式</p>
 <ul>
 <li>但是为每一个点都配单调栈内存不够</li>
 </ul></li>
-<li>我们发现左边的单调栈一定是右边的转过来的
-<ul>
-<li>所以我们只需要维护一个单调栈</li>
-<li>在遇到对于要处理的点的查询的时候直接查询就行</li>
-</ul></li>
-<li>也就是我们总体过程是离线查询+单调栈+二分</li>
-</ul>
+<li><p>我们发现左边的单调栈一定是右边的转过来的</p></li>
+<li><p>所以我们只需要维护一个单调栈,在遇到对于要处理的点的查询的时候直接查询就行</p></li>
+<li><p>也就是我们总体过程是离线查询+单调栈+二分</p></li>
+</ol>
 <h2 id="代码细节">代码细节</h2>
 <ol type="1">
 <li>我们先用哈希表记录查询,保证不漏:
