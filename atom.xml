@@ -6,7 +6,7 @@
   <link href="https://noirzh.github.io/atom.xml" rel="self"/>
   
   <link href="https://noirzh.github.io/"/>
-  <updated>2023-11-12T06:59:21.770Z</updated>
+  <updated>2023-11-20T02:08:07.632Z</updated>
   <id>https://noirzh.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>题解-找到 Alice 和 Bob 可以相遇的建筑-单调栈+二分+离线</title>
+    <link href="https://noirzh.github.io/2023/11/19/100110/"/>
+    <id>https://noirzh.github.io/2023/11/19/100110/</id>
+    <published>2023-11-19T06:51:17.000Z</published>
+    <updated>2023-11-20T02:08:07.632Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Problem: <a href="https://leetcode.cn/problems/find-building-where-alice-and-bob-can-meet/description/">100110.找到 Alice 和 Bob 可以相遇的建筑</a></p></blockquote><p>[TOC]</p><h2 id="思路">思路</h2><ul><li>分解一下题目,发现和Alice和Bob二人顺序没关系,为了方便,我们假设Alice所在建筑位置在左边,称为a,bob就会在右边,称为b</li><li>假设a,b相等,则所在的位置就是b</li><li>若b所在高度大于a,则答案是b</li><li>剩下的就是我们要考虑的一般情况:b的高度小于a,</li></ul><h2 id="解题方法">解题方法</h2><ul><li>我们要做的明确,查b的右侧大于a的第一个建筑</li><li>每次都向后查询显然时间复杂度不够,遍历q又是必须的,所以我们想把这个查询压到log级别</li><li>显然可以通过维护右侧单调栈+二分的模式<ul><li>但是为每一个点都配单调栈内存不够</li></ul></li><li>我们发现左边的单调栈一定是右边的转过来的<ul><li>所以我们只需要维护一个单调栈</li><li>在遇到对于要处理的点的查询的时候直接查询就行</li></ul></li><li>也就是我们总体过程是离线查询+单调栈+二分</li></ul><h2 id="代码细节">代码细节</h2><ol type="1"><li>我们先用哈希表记录查询,保证不漏:<ol type="1"><li>先保证a&lt;=b</li><li>以b为key,存储想查询的值:a和答案位置i</li><li>需要注意的是可能存在多个a的情况,需要用列表而不是一一对应</li></ol></li><li>从后向前遍历,维护单调栈<ol type="1"><li>对于遍历的点,如果在哈希表内,说明其是b</li><li>现在维护的单调栈满足需求</li><li>二分查到的答案再写回相应的位置</li></ol></li></ol><h2 id="code">Code</h2><figure class="highlight plaintext"><figcaption><span>[]</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">class Solution:    </span><br><span class="line">    def leftmostBuildingQueries(self, heights: List[int], queries: List[List[int]]) -&gt; List[int]:</span><br><span class="line">        n=len(queries)  </span><br><span class="line">        hash={}#记录b对应的a和index</span><br><span class="line">        for i in range(n):</span><br><span class="line">            a=min(queries[i])</span><br><span class="line">            b=max(queries[i])</span><br><span class="line">            if b not in hash:</span><br><span class="line">                hash[b]=[]</span><br><span class="line">            hash[b].append([a,i])</span><br><span class="line">          </span><br><span class="line">        #记录右边单调递增</span><br><span class="line">        st=[]</span><br><span class="line">        res=[-1]*n</span><br><span class="line">        for i in range(len(heights)-1,-1,-1):</span><br><span class="line">            h=heights[i]</span><br><span class="line">            while st and h&gt;heights[st[-1]]:</span><br><span class="line">                st.pop()</span><br><span class="line">            st.append(i)</span><br><span class="line">            if i in hash:</span><br><span class="line">                b=i</span><br><span class="line">                n_st=st[::-1]</span><br><span class="line">                for a,index in hash[i]:</span><br><span class="line">                    if heights[b]&gt;heights[a] or a==b:</span><br><span class="line">                        res[index]=b</span><br><span class="line">                    else:</span><br><span class="line">                        l,r=0,len(n_st)-1</span><br><span class="line">                        while l&lt;=r:</span><br><span class="line">                            mid=(l+r)//2</span><br><span class="line">                            if heights[n_st[mid]]&gt;heights[a]:</span><br><span class="line">                                r=mid-1</span><br><span class="line">                            else:</span><br><span class="line">                                l=mid+1</span><br><span class="line">                        if (r+1&gt;=len(n_st)):</span><br><span class="line">                            res[index]=-1</span><br><span class="line">                        else:</span><br><span class="line">                            res[index]=n_st[r+1]</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Problem: &lt;a href=&quot;https://leetcode.cn/problems/find-building-where-alice-and-bob-can-meet/description/&quot;&gt;100110.
+找到 Alice 和</summary>
+      
+    
+    
+    
+    
+    <category term="题解" scheme="https://noirzh.github.io/tags/%E9%A2%98%E8%A7%A3/"/>
+    
+    <category term="Python" scheme="https://noirzh.github.io/tags/Python/"/>
+    
+    <category term="离线查询" scheme="https://noirzh.github.io/tags/%E7%A6%BB%E7%BA%BF%E6%9F%A5%E8%AF%A2/"/>
+    
+    <category term="单调栈" scheme="https://noirzh.github.io/tags/%E5%8D%95%E8%B0%83%E6%A0%88/"/>
+    
+    <category term="二分查找" scheme="https://noirzh.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
+    
+  </entry>
   
   <entry>
     <title>题解-逃离火灾-两遍BFS</title>
@@ -326,11 +358,11 @@
     
     <category term="Python" scheme="https://noirzh.github.io/tags/Python/"/>
     
+    <category term="C++" scheme="https://noirzh.github.io/tags/C/"/>
+    
     <category term="树" scheme="https://noirzh.github.io/tags/%E6%A0%91/"/>
     
     <category term="深度优先搜索" scheme="https://noirzh.github.io/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/"/>
-    
-    <category term="C++" scheme="https://noirzh.github.io/tags/C/"/>
     
   </entry>
   

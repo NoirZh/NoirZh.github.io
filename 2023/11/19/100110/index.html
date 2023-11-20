@@ -17,18 +17,25 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>标签: 深度优先搜索 | 一共十七划</title>
-  <meta name="description" content="我们逃去看海吧">
-<meta property="og:type" content="website">
-<meta property="og:title" content="一共十七划">
-<meta property="og:url" content="https://noirzh.github.io/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/index.html">
+  <title>题解-找到 Alice 和 Bob 可以相遇的建筑-单调栈+二分+离线 | 一共十七划</title>
+  <meta name="description" content="Problem: 100110. 找到 Alice 和 Bob 可以相遇的建筑  [TOC] 思路  分解一下题目,发现和Alice和Bob二人顺序没关系,为了方便,我们假设Alice所在建筑位置在左边,称为a,bob就会在右边,称为b 假设a,b相等,则所在的位置就是b 若b所在高度大于a,则答案是b 剩下的就是我们要考虑的一般情况:b的高度小于a,  解题方法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="题解-找到 Alice 和 Bob 可以相遇的建筑-单调栈+二分+离线">
+<meta property="og:url" content="https://noirzh.github.io/2023/11/19/100110/index.html">
 <meta property="og:site_name" content="一共十七划">
-<meta property="og:description" content="我们逃去看海吧">
+<meta property="og:description" content="Problem: 100110. 找到 Alice 和 Bob 可以相遇的建筑  [TOC] 思路  分解一下题目,发现和Alice和Bob二人顺序没关系,为了方便,我们假设Alice所在建筑位置在左边,称为a,bob就会在右边,称为b 假设a,b相等,则所在的位置就是b 若b所在高度大于a,则答案是b 剩下的就是我们要考虑的一般情况:b的高度小于a,  解题方法">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-19T06:51:17.000Z">
+<meta property="article:modified_time" content="2023-11-20T02:08:07.632Z">
 <meta property="article:author" content="Noir">
+<meta property="article:tag" content="题解">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="离线查询">
+<meta property="article:tag" content="单调栈">
+<meta property="article:tag" content="二分查找">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://noirzh.github.io/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/index.html">
+  <link rel="canonical" href="https://noirzh.github.io/2023/11/19/100110/index.html">
   
     <link rel="alternate" href="/atom.xml" title="一共十七划" type="application/atom+xml">
   
@@ -38,6 +45,8 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
+  
+    <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
   
   
   
@@ -485,104 +494,177 @@ mjx-container[display="true"] + br {
 </aside>
 
   
-  <main class="main" role="main">
-  <article class="content article article-tags post-type-list" itemscope="">
-    <header class="article-header">
-      <h1 itemprop="name" class="hidden-xs">标签: 深度优先搜索</h1>
-      <p class="text-muted hidden-xs">共 1 篇文章</p>
-      <nav role="navigation" id="nav-main" class="okayNav">
-        <ul>
-          <li><a href="/tags">All</a></li>
-          
-          <li><a href="/tags/markdown/">markdown</a></li>
-          
-          <li><a href="/tags/题解/">题解</a></li>
-          
-          <li><a href="/tags/Python/">Python</a></li>
-          
-          <li><a href="/tags/离线查询/">离线查询</a></li>
-          
-          <li><a href="/tags/单调栈/">单调栈</a></li>
-          
-          <li><a href="/tags/二分查找/">二分查找</a></li>
-          
-          <li><a href="/tags/论文/">论文</a></li>
-          
-          <li><a href="/tags/翻译/">翻译</a></li>
-          
-          <li><a href="/tags/小说/">小说</a></li>
-          
-          <li><a href="/tags/杂谈/">杂谈</a></li>
-          
-          <li><a href="/tags/A-B/">A=B</a></li>
-          
-          <li><a href="/tags/贪心/">贪心</a></li>
-          
-          <li><a href="/tags/前缀和/">前缀和</a></li>
-          
-          <li><a href="/tags/C/">C++</a></li>
-          
-          <li><a href="/tags/数学/">数学</a></li>
-          
-          <li><a href="/tags/模拟/">模拟</a></li>
-          
-          <li><a href="/tags/树/">树</a></li>
-          
-          <li><a href="/tags/深度优先搜索/">深度优先搜索</a></li>
-          
-          <li><a href="/tags/动态规划/">动态规划</a></li>
-          
-          <li><a href="/tags/哈希表/">哈希表</a></li>
-          
-          <li><a href="/tags/字符串/">字符串</a></li>
-          
-          <li><a href="/tags/脑筋急转弯/">脑筋急转弯</a></li>
-          
-          <li><a href="/tags/排序/">排序</a></li>
-          
-          <li><a href="/tags/BFS/">BFS</a></li>
-          
-        </ul>
-      </nav>
-    </header>
-    <!-- /header -->
-    <div class="article-body">
-      <div class="row">
-        
-<div class="col-md-6">
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-100110" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2023-07-14T15:46:22.000Z" itemprop="datePublished">2023-07-14</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/2023/07/14/%E9%A2%98%E8%A7%A3-%E5%9C%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%88%86%E9%85%8D%E7%A1%AC%E5%B8%81/">题解-在二叉树中分配硬币-深度优先搜索,自底向上考虑</a>
-     </h3>
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/tags/%E9%A2%98%E8%A7%A3/" class="label label-default mb">题解</a>
-     
-      <a href="/tags/Python/" class="label label-default mb">Python</a>
-     
-      <a href="/tags/C/" class="label label-default mb">C++</a>
-     
-     
-      <span class="label label-default mb">···</span>
-     
-   </div>
-   
-</article>
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      题解-找到 Alice 和 Bob 可以相遇的建筑-单调栈+二分+离线
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2023/11/19/100110/" class="article-date">
+	  <time datetime="2023-11-19T06:51:17.000Z" itemprop="datePublished">2023-11-19</time>
+	</a>
+</span>
+        
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/Python/" rel="tag">Python</a>, <a class="article-tag-link-link" href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" rel="tag">二分查找</a>, <a class="article-tag-link-link" href="/tags/%E5%8D%95%E8%B0%83%E6%A0%88/" rel="tag">单调栈</a>, <a class="article-tag-link-link" href="/tags/%E7%A6%BB%E7%BA%BF%E6%9F%A5%E8%AF%A2/" rel="tag">离线查询</a>, <a class="article-tag-link-link" href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag">题解</a>
+  </span>
 
 
-</div>
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/11/19/100110/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 573(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
+	
 
       </div>
     </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>Problem: <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-building-where-alice-and-bob-can-meet/description/">100110.
+找到 Alice 和 Bob 可以相遇的建筑</a></p>
+</blockquote>
+<p>[TOC]</p>
+<h2 id="思路">思路</h2>
+<ul>
+<li>分解一下题目,发现和Alice和Bob二人顺序没关系,为了方便,我们假设Alice所在建筑位置在左边,称为a,bob就会在右边,称为b</li>
+<li>假设a,b相等,则所在的位置就是b</li>
+<li>若b所在高度大于a,则答案是b</li>
+<li>剩下的就是我们要考虑的一般情况:b的高度小于a,</li>
+</ul>
+<h2 id="解题方法">解题方法</h2>
+<ul>
+<li>我们要做的明确,查b的右侧大于a的第一个建筑</li>
+<li>每次都向后查询显然时间复杂度不够,遍历q又是必须的,所以我们想把这个查询压到log级别</li>
+<li>显然可以通过维护右侧单调栈+二分的模式
+<ul>
+<li>但是为每一个点都配单调栈内存不够</li>
+</ul></li>
+<li>我们发现左边的单调栈一定是右边的转过来的
+<ul>
+<li>所以我们只需要维护一个单调栈</li>
+<li>在遇到对于要处理的点的查询的时候直接查询就行</li>
+</ul></li>
+<li>也就是我们总体过程是离线查询+单调栈+二分</li>
+</ul>
+<h2 id="代码细节">代码细节</h2>
+<ol type="1">
+<li>我们先用哈希表记录查询,保证不漏:
+<ol type="1">
+<li>先保证a&lt;=b</li>
+<li>以b为key,存储想查询的值:a和答案位置i</li>
+<li>需要注意的是可能存在多个a的情况,需要用列表而不是一一对应</li>
+</ol></li>
+<li>从后向前遍历,维护单调栈
+<ol type="1">
+<li>对于遍历的点,如果在哈希表内,说明其是b</li>
+<li>现在维护的单调栈满足需求</li>
+<li>二分查到的答案再写回相应的位置</li>
+</ol></li>
+</ol>
+<h2 id="code">Code</h2>
+<figure class="highlight plaintext"><figcaption><span>[]</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">class Solution:    </span><br><span class="line">    def leftmostBuildingQueries(self, heights: List[int], queries: List[List[int]]) -&gt; List[int]:</span><br><span class="line">        n=len(queries)  </span><br><span class="line">        hash={}#记录b对应的a和index</span><br><span class="line">        for i in range(n):</span><br><span class="line">            a=min(queries[i])</span><br><span class="line">            b=max(queries[i])</span><br><span class="line">            if b not in hash:</span><br><span class="line">                hash[b]=[]</span><br><span class="line">            hash[b].append([a,i])</span><br><span class="line">          </span><br><span class="line">        #记录右边单调递增</span><br><span class="line">        st=[]</span><br><span class="line">        res=[-1]*n</span><br><span class="line">        for i in range(len(heights)-1,-1,-1):</span><br><span class="line">            h=heights[i]</span><br><span class="line">            while st and h&gt;heights[st[-1]]:</span><br><span class="line">                st.pop()</span><br><span class="line">            st.append(i)</span><br><span class="line">            if i in hash:</span><br><span class="line">                b=i</span><br><span class="line">                n_st=st[::-1]</span><br><span class="line">                for a,index in hash[i]:</span><br><span class="line">                    if heights[b]&gt;heights[a] or a==b:</span><br><span class="line">                        res[index]=b</span><br><span class="line">                    else:</span><br><span class="line">                        l,r=0,len(n_st)-1</span><br><span class="line">                        while l&lt;=r:</span><br><span class="line">                            mid=(l+r)//2</span><br><span class="line">                            if heights[n_st[mid]]&gt;heights[a]:</span><br><span class="line">                                r=mid-1</span><br><span class="line">                            else:</span><br><span class="line">                                l=mid+1</span><br><span class="line">                        if (r+1&gt;=len(n_st)):</span><br><span class="line">                            res[index]=-1</span><br><span class="line">                        else:</span><br><span class="line">                            res[index]=n_st[r+1]</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://noirzh.github.io/2023/11/19/100110/" title="题解-找到 Alice 和 Bob 可以相遇的建筑-单调栈+二分+离线" target="_blank" rel="external">https://noirzh.github.io/2023/11/19/100110/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/NoirZh" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/92602390_p0.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/NoirZh" target="_blank"><span class="text-dark">Noir</span><small class="ml-1x">king&#39;s Pawn</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
   </article>
-   
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2023/11/09/%E9%A2%98%E8%A7%A3-%E9%80%83%E7%A6%BB%E7%81%AB%E7%81%BE/" title="题解-逃离火灾-两遍BFS"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -641,6 +723,39 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
 
 
 
