@@ -309,9 +309,9 @@
     
     <category term="题解" scheme="https://noirzh.github.io/tags/%E9%A2%98%E8%A7%A3/"/>
     
-    <category term="Python" scheme="https://noirzh.github.io/tags/Python/"/>
-    
     <category term="数学" scheme="https://noirzh.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="Python" scheme="https://noirzh.github.io/tags/Python/"/>
     
   </entry>
   
@@ -387,9 +387,9 @@
     
     <category term="题解" scheme="https://noirzh.github.io/tags/%E9%A2%98%E8%A7%A3/"/>
     
-    <category term="Python" scheme="https://noirzh.github.io/tags/Python/"/>
-    
     <category term="C++" scheme="https://noirzh.github.io/tags/C/"/>
+    
+    <category term="Python" scheme="https://noirzh.github.io/tags/Python/"/>
     
     <category term="树" scheme="https://noirzh.github.io/tags/%E6%A0%91/"/>
     
@@ -457,34 +457,6 @@
     <category term="哈希表" scheme="https://noirzh.github.io/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/"/>
     
     <category term="字符串" scheme="https://noirzh.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于元宵节吃饺子的论证</title>
-    <link href="https://noirzh.github.io/2023/02/05/%E6%9D%82%E8%B0%88-%E5%85%83%E5%AE%B5%E8%8A%82/"/>
-    <id>https://noirzh.github.io/2023/02/05/%E6%9D%82%E8%B0%88-%E5%85%83%E5%AE%B5%E8%8A%82/</id>
-    <published>2023-02-05T01:10:17.000Z</published>
-    <updated>2023-11-12T07:33:05.431Z</updated>
-    
-    <content type="html"><![CDATA[<p>关于元宵节吃饺子的论证<br>你为什么在哭啊，只是脑袋</p><p>公理-1 ：大年三十十二点之后吃饺子<br>公理-2：新年的第一天是正月初一<br>公理-3：每天的刷新点为00:00，也就是24:00<br>开始论证<br>元宵节，既元宵的节日 （1）<br>元的意思为首个，第一个 （2）<br>宵的意思为夜晚 （3）<br>由（2）（3）得元宵的意思为第一个夜晚，既新年的第一个夜晚（4）<br>由（4），公理-2，得元宵指的是第一个夜晚，既正月初一夜晚（5）<br>由（5），公理（3）可知，正月初一的夜晚包括大年三十十二点之后的夜晚（6）<br>由（1）（4）（5）（6）可知，元宵节既大年三十过了十二点的夜晚的节日（7）<br>由（7），公理-1可知，元宵节吃饺子 （8）<br>所以，元宵节按照习俗应该吃饺子<br>Q.E.D.</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;关于元宵节吃饺子的论证&lt;br&gt;
-你为什么在哭啊，只是脑袋&lt;/p&gt;
-&lt;p&gt;公理-1 ：大年三十十二点之后吃饺子&lt;br&gt;
-公理-2：新年的第一天是正月初一&lt;br&gt;
-公理-3：每天的刷新点为00:00，也就是24:00&lt;br&gt;
-开始论证&lt;br&gt;
-元宵节，既元宵的节日 </summary>
-      
-    
-    
-    
-    
-    <category term="杂谈" scheme="https://noirzh.github.io/tags/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   
