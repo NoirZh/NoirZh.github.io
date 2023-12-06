@@ -549,41 +549,41 @@ mjx-container[display="true"] + br {
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="前言">前言</h2>
+        <h2><span id="前言">前言</span></h2>
 <p>A=B语言也较为特殊,可以认为整体是个循环体,但是是每次循环只要能够执行一条命令就去执行,然后就重新回到循环开头</p>
 <p>这个性质会在后续不断应用</p>
 <p>而且其本质在做的就是字符串替换</p>
-<h2 id="11-a到b">1.1 A到B</h2>
+<h2><span id="11-a到b">1.1 A到B</span></h2>
 <figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">a</span><span class="operator">=</span>b</span><br></pre></td></tr></table></figure>
-<h2 id="12-大写">1.2 大写</h2>
+<h2><span id="12-大写">1.2 大写</span></h2>
 <figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">a</span><span class="operator">=</span>A</span><br><span class="line"><span class="attribute">b</span><span class="operator">=</span>B</span><br><span class="line"><span class="attribute">c</span><span class="operator">=</span>C</span><br></pre></td></tr></table></figure>
-<h2 id="13-去重">1.3 去重</h2>
-<h3 id="思路">思路</h3>
+<h2><span id="13-去重">1.3 去重</span></h2>
+<h3><span id="思路">思路</span></h3>
 <p>显然我们最后要保留的状态是没有连续字母</p>
 <p>只需要将重复的几个压成一个就行,不过要注意A=B这个语言的特殊性</p>
-<h3 id="代码">代码</h3>
+<h3><span id="代码">代码</span></h3>
 <figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">aa</span><span class="operator">=</span>a</span><br><span class="line"><span class="attribute">bb</span><span class="operator">=</span>b</span><br><span class="line"><span class="attribute">cc</span><span class="operator">=</span>c</span><br></pre></td></tr></table></figure>
-<h2 id="14-去重-2">1.4 去重 2</h2>
-<h3 id="思路-1">思路</h3>
+<h2><span id="14-去重-2">1.4 去重 2</span></h2>
+<h3><span id="思路">思路</span></h3>
 <p>同理,这个是把连续的a压没,</p>
 <p>这里之所以会有aaa,而不是直接<code>aa=</code>是因为假如只压缩的可能会剩下来:例如<code>aaa</code>会被替换成<code>a</code></p>
 <p>,我们这么做的本质是将多的字母先压成两个,再把这两个消除掉</p>
 <figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">aaa</span><span class="operator">=</span>aa</span><br><span class="line"><span class="attribute">aa</span><span class="operator">=</span></span><br></pre></td></tr></table></figure>
-<h2 id="15-排序">1.5 排序</h2>
-<h3 id="思路-2">思路</h3>
+<h2><span id="15-排序">1.5 排序</span></h2>
+<h3><span id="思路">思路</span></h3>
 <p>研究语言的必经之路,排序,注意到我们现在在做的是替换字符串</p>
 <p>我们的目的是希望各个字母都在其应该在的位置,但我们不知道数组下标,怎么样能达成这两个条件呢?</p>
 <p>我们需要一个只看相邻的排序算法,也就是冒泡算法,实现起来不难,如下</p>
-<h3 id="代码-1">代码</h3>
+<h3><span id="代码">代码</span></h3>
 <p>看到了吗,本质就是大的向后挪动,这个在单步运行时候看的更清楚</p>
 <figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ba</span><span class="operator">=</span>ab</span><br><span class="line"><span class="attribute">cb</span><span class="operator">=</span>bc</span><br><span class="line"><span class="attribute">ca</span><span class="operator">=</span>ac</span><br></pre></td></tr></table></figure>
 <p>这个排序在之后会常用到的,当我们只关心字母数量之类的而不关心其位置的时候</p>
-<h2 id="16-比较">1.6 比较</h2>
-<h3 id="思路-3">思路</h3>
+<h2><span id="16-比较">1.6 比较</span></h2>
+<h3><span id="思路">思路</span></h3>
 <p>比较a和b的多少,还记得去重怎么做的吗?把两个相同的数摁在一起消除</p>
 <p>这个题也一样,我们把两个不同的字母摁在一起消除,剩下的就是多的字母</p>
 <p>值得一提的是压字母存在两个情况</p>
-<h3 id="代码-2">代码</h3>
+<h3><span id="代码">代码</span></h3>
 <figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ab</span><span class="operator">=</span></span><br><span class="line"><span class="attribute">ba</span><span class="operator">=</span></span><br><span class="line"><span class="attribute">aa</span><span class="operator">=</span>a</span><br><span class="line"><span class="attribute">bb</span><span class="operator">=</span>b</span><br></pre></td></tr></table></figure>
 
       

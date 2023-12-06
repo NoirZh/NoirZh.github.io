@@ -18,15 +18,15 @@
   
   
   <title>题解-困于环中的机器人-模拟与相关证明 | 一共十七划</title>
-  <meta name="description" content="思路  对于机器人,如果走结束后方向仍在北方,且不在原点才会脱离圈,不然就会困在圈里 因此只需要模拟即可 ## 证明 假设我们第一次位移结束之后之后机器人所在的坐标为(x,y) 我们按照此时机器人面向的方向讨论  此时面向北方的:下一次前进路线和上次一致,第二次前进之后是(2x,2y),以此类推因此只要x,y不全为0则不会回到原点 此时面向南方: 考虑转换参考系,以面朝的方向为">
+  <meta name="description" content="思路 证明 实现思路 代码   思路  对于机器人,如果走结束后方向仍在北方,且不在原点才会脱离圈,不然就会困在圈里 因此只需要模拟即可 ## 证明 假设我们第一次位移结束之后之后机器人所在的坐标为(x,y) 我们按照此时机器人面向的方向讨论  此时面向北方的:下一次前进路线和上次一致,第二次前进之后是(2x,2y),以此类推因此只要x,y不全为0则不会回到原点">
 <meta property="og:type" content="article">
 <meta property="og:title" content="题解-困于环中的机器人-模拟与相关证明">
 <meta property="og:url" content="https://noirzh.github.io/2023/04/11/%E9%A2%98%E8%A7%A3-%E5%9B%B0%E4%BA%8E%E7%8E%AF%E4%B8%AD%E7%9A%84%E6%9C%BA%E5%99%A8%E4%BA%BA/index.html">
 <meta property="og:site_name" content="一共十七划">
-<meta property="og:description" content="思路  对于机器人,如果走结束后方向仍在北方,且不在原点才会脱离圈,不然就会困在圈里 因此只需要模拟即可 ## 证明 假设我们第一次位移结束之后之后机器人所在的坐标为(x,y) 我们按照此时机器人面向的方向讨论  此时面向北方的:下一次前进路线和上次一致,第二次前进之后是(2x,2y),以此类推因此只要x,y不全为0则不会回到原点 此时面向南方: 考虑转换参考系,以面朝的方向为">
+<meta property="og:description" content="思路 证明 实现思路 代码   思路  对于机器人,如果走结束后方向仍在北方,且不在原点才会脱离圈,不然就会困在圈里 因此只需要模拟即可 ## 证明 假设我们第一次位移结束之后之后机器人所在的坐标为(x,y) 我们按照此时机器人面向的方向讨论  此时面向北方的:下一次前进路线和上次一致,第二次前进之后是(2x,2y),以此类推因此只要x,y不全为0则不会回到原点">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-04-11T13:51:11.000Z">
-<meta property="article:modified_time" content="2023-12-06T06:46:13.639Z">
+<meta property="article:modified_time" content="2023-12-06T06:54:49.745Z">
 <meta property="article:author" content="Noir">
 <meta property="article:tag" content="题解">
 <meta property="article:tag" content="C++">
@@ -543,7 +543,7 @@ mjx-container[display="true"] + br {
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/04/11/%E9%A2%98%E8%A7%A3-%E5%9B%B0%E4%BA%8E%E7%8E%AF%E4%B8%AD%E7%9A%84%E6%9C%BA%E5%99%A8%E4%BA%BA/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 527(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 537(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
@@ -553,7 +553,15 @@ mjx-container[display="true"] + br {
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="思路">思路</h2>
+        <!-- toc -->
+<ul>
+<li><a href="#思路">思路</a></li>
+<li><a href="#证明">证明</a></li>
+<li><a href="#实现思路">实现思路</a></li>
+<li><a href="#代码">代码</a></li>
+</ul>
+<!-- tocstop -->
+<h2><span id="思路">思路</span></h2>
 <ul>
 <li>对于机器人,如果走结束后方向仍在北方,且不在原点才会脱离圈,不然就会困在圈里</li>
 <li>因此只需要模拟即可<br>

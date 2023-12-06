@@ -549,43 +549,43 @@ mjx-container[display="true"] + br {
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="前言">前言</h2>
+        <h2><span id="前言">前言</span></h2>
 <p>这个关键字相当于在找到特定的子字符串之后,删去该子字符串,并且将我们指定的新字符串插入到原字符串的开头与结尾</p>
 <p>类似于正则表达式的^与$的应用</p>
 <p>很像是我们在第二章的操作:将字母压之后换成其他字母往后排以使得压缩持续进行</p>
-<h2 id="section"></h2>
-<h2 id="3-1-去除">3-1 去除</h2>
+<h2><span id></span></h2>
+<h2><span id="3-1-去除">3-1 去除</span></h2>
 <p>相当简单的教程</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(start)a=</span><br><span class="line">(end)a=</span><br></pre></td></tr></table></figure>
-<h2 id="3-2-旋转">3-2 旋转</h2>
+<h2><span id="3-2-旋转">3-2 旋转</span></h2>
 <p>这里只针对前面不是a进行操作,可以保证</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(start)b=(end)b</span><br><span class="line">(start)c=(end)c</span><br></pre></td></tr></table></figure>
-<h2 id="3-3-a到b-2">3-3 A到B 2</h2>
-<h3 id="思路">思路</h3>
+<h2><span id="3-3-a到b-2">3-3 A到B 2</span></h2>
+<h3><span id="思路">思路</span></h3>
 <p>开始上难度了,但是其实不难,我们只需要先把所有特定位置的a变成特殊的,然后再处理另一边的特殊的即可</p>
 <p>就像是我们之前做过的一样,此时的代码如下</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(start)a=x</span><br><span class="line">xa=ax</span><br><span class="line">(end)a=z</span><br><span class="line">az=za</span><br><span class="line">x=b</span><br><span class="line">z=b</span><br></pre></td></tr></table></figure>
-<h3 id="优化">优化</h3>
+<h3><span id="优化">优化</span></h3>
 <p>我们很容易注意到我们的xa=ax或者之类的操作只是把所有符合要求的串找出来,保证不阻塞生成</p>
 <p>于是我们注意到移到另一边的位置显然更好(指行数更小),更新之后如下</p>
-<h3 id="代码">代码</h3>
+<h3><span id="代码">代码</span></h3>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(start)a=(end)x</span><br><span class="line">(end)x=(start)b</span><br><span class="line">(end)a=(start)x</span><br><span class="line">(start)x=(end)b</span><br></pre></td></tr></table></figure>
-<h2 id="3-5-首尾">3-5 首尾</h2>
+<h2><span id="3-5-首尾">3-5 首尾</span></h2>
 <p>通过上一题我们就知道弄到尾部直接判断即可</p>
 <p>我们唯一要注意的就是判断在前,不然容易出死循环</p>
 <figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ax=(<span class="keyword">return</span>)<span class="keyword">true</span> #有任意一个就是真的,能迅速检查到</span><br><span class="line"><span class="keyword">by</span>=(<span class="keyword">return</span>)<span class="keyword">true</span></span><br><span class="line">cz=(<span class="keyword">return</span>)<span class="keyword">true</span></span><br><span class="line"></span><br><span class="line">#以下的操作会<span class="number">1.</span>在有相同的时候把除了最后一个字母之外都换成其他字母插入到后面 <span class="number">2.</span>没有相同的时候所有都插入到后面</span><br><span class="line">(<span class="keyword">start</span>)a=(<span class="keyword">end</span>)x</span><br><span class="line">(<span class="keyword">start</span>)b=(<span class="keyword">end</span>)y</span><br><span class="line">(<span class="keyword">start</span>)c=(<span class="keyword">end</span>)z</span><br><span class="line">=(<span class="keyword">return</span>)<span class="keyword">false</span></span><br></pre></td></tr></table></figure>
-<h2 id="3-6-最多-2">3-6 最多 2</h2>
-<h2 id="思路-1">思路</h2>
+<h2><span id="3-6-最多-2">3-6 最多 2</span></h2>
+<h2><span id="思路">思路</span></h2>
 <p>与之前的类似,但是我们需要保留所有作比较的字母来保证恢复,然后这里其实就可以</p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">ca</span>=ac</span><br><span class="line"><span class="attr">cb</span>=bc</span><br><span class="line"><span class="attr">ba</span>=ab</span><br><span class="line"><span class="attr">ab</span>=(end)x</span><br><span class="line"><span class="attr">cx</span>=(end)y <span class="comment">#y代表abc,可随时换成最多的 #剩下ac和bc</span></span><br><span class="line"><span class="comment">#之后我们不用关心y具体是什么,只要二者消耗,剩下的那个做全员回复就行</span></span><br><span class="line"></span><br><span class="line"><span class="attr">ac</span>=(end)y</span><br><span class="line"><span class="attr">bc</span>=(end)y</span><br><span class="line"><span class="comment">#做一个穷举</span></span><br><span class="line"><span class="attr">ax</span>=aa</span><br><span class="line"><span class="attr">cy</span>=cc</span><br><span class="line"><span class="attr">by</span>=bb</span><br><span class="line"><span class="attr">ay</span>=aa</span><br><span class="line"><span class="attr">bx</span>=bb</span><br></pre></td></tr></table></figure>
-<h3 id="优化-1">优化</h3>
+<h3><span id="优化">优化</span></h3>
 <p>发现ax,ay的行为是相同的,bx,by也是,优化以下</p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">ca</span>=ac</span><br><span class="line"><span class="attr">cb</span>=bc</span><br><span class="line"><span class="attr">ba</span>=ab</span><br><span class="line"><span class="attr">ab</span>=(end)x</span><br><span class="line"><span class="attr">cx</span>=(end)y <span class="comment">#y代表abc,可随时换成最多的</span></span><br><span class="line"><span class="comment">#acy bcy ay by cy </span></span><br><span class="line"></span><br><span class="line"><span class="attr">ac</span>=(end)y</span><br><span class="line"><span class="attr">bc</span>=(end)y</span><br><span class="line"><span class="attr">x</span>=y</span><br><span class="line"><span class="attr">cy</span>=cc</span><br><span class="line"><span class="attr">by</span>=bb</span><br><span class="line"><span class="attr">ay</span>=a</span><br></pre></td></tr></table></figure>
-<h2 id="3-7回文串">3-7回文串</h2>
-<h3 id="思路-2">思路</h3>
+<h2><span id="3-7回文串">3-7回文串</span></h2>
+<h3><span id="思路">思路</span></h3>
 <p>判断是不是消除之后全空即可,如3-5的加强版,我们进行全局替换,然后穷举非空情况,但是注意我们不用考虑剩下来的单个字母的情况,因为那种情况也属于回文串</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">cz=</span><br><span class="line">by=</span><br><span class="line">ax=</span><br><span class="line">(start)a=(end)x</span><br><span class="line">(start)b=(end)y</span><br><span class="line">(start)c=(end)z</span><br><span class="line">xy=(<span class="keyword">return</span>)false</span><br><span class="line">xz=(<span class="keyword">return</span>)false</span><br><span class="line">yx=(<span class="keyword">return</span>)false</span><br><span class="line">yz=(<span class="keyword">return</span>)false</span><br><span class="line">zx=(<span class="keyword">return</span>)false</span><br><span class="line">zy=(<span class="keyword">return</span>)false</span><br><span class="line">=(<span class="keyword">return</span>)true</span><br></pre></td></tr></table></figure>
-<h3 id="挑战优化">挑战优化</h3>
+<h3><span id="挑战优化">挑战优化</span></h3>
 <p>注意到我们六行代码目的都只是为了判断是否有两个字母及以上存在</p>
 <p>修改字符串使之存在首尾标识符即可,也就是说能保证显示出来两个字母不同且存在</p>
 <figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cuZn=</span><br><span class="line">buYn=</span><br><span class="line">auXn=</span><br><span class="line">(start)a=(end)uXn</span><br><span class="line">(start)b=(end)uYn #不影响排空</span><br><span class="line">(start)c=(end)uZn</span><br><span class="line">nu=(return)<span class="built_in">false</span>  #出现这个说明仍有多个字母存在,整个字符串非空,</span><br><span class="line">=(return)<span class="built_in">true</span></span><br></pre></td></tr></table></figure>
