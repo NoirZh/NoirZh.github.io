@@ -17,18 +17,24 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>归档: 2023/12 | 一共十七划</title>
-  <meta name="description" content="我们逃去看海吧">
-<meta property="og:type" content="website">
-<meta property="og:title" content="一共十七划">
-<meta property="og:url" content="https://noirzh.github.io/archives/2023/12/index.html">
+  <title>题解-需要添加的硬币的最小数量-最大化在缺口处补硬币的作用 | 一共十七划</title>
+  <meta name="description" content="Problem: 100153. 需要添加的硬币的最小数量   思路  这题和LeetCode-1798. 你能构造出连续值的最大数目很像,很经典的想法 是子序列所以先排序 先考虑我们手里的硬币能构造出来多少 假设我们手里的硬币足够我们构造出来[0,x),接下来我们又拿到了一个硬币,数值为y,  如果我们把y放进之前的所有序列之中,会发现我们能够构造[y,x+y) 再">
+<meta property="og:type" content="article">
+<meta property="og:title" content="题解-需要添加的硬币的最小数量-最大化在缺口处补硬币的作用">
+<meta property="og:url" content="https://noirzh.github.io/2023/12/03/%E9%A2%98%E8%A7%A3-%E9%9C%80%E8%A6%81%E6%B7%BB%E5%8A%A0%E7%9A%84%E7%A1%AC%E5%B8%81%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E9%87%8F-%E6%9C%80%E5%A4%A7%E5%8C%96%E5%9C%A8%E7%BC%BA%E5%8F%A3%E5%A4%84%E8%A1%A5%E7%A1%AC%E5%B8%81%E7%9A%84%E4%BD%9C%E7%94%A8/index.html">
 <meta property="og:site_name" content="一共十七划">
-<meta property="og:description" content="我们逃去看海吧">
+<meta property="og:description" content="Problem: 100153. 需要添加的硬币的最小数量   思路  这题和LeetCode-1798. 你能构造出连续值的最大数目很像,很经典的想法 是子序列所以先排序 先考虑我们手里的硬币能构造出来多少 假设我们手里的硬币足够我们构造出来[0,x),接下来我们又拿到了一个硬币,数值为y,  如果我们把y放进之前的所有序列之中,会发现我们能够构造[y,x+y) 再">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-12-03T04:04:15.000Z">
+<meta property="article:modified_time" content="2023-12-08T06:20:23.758Z">
 <meta property="article:author" content="Noir">
+<meta property="article:tag" content="题解">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="数学">
+<meta property="article:tag" content="脑筋急转弯">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://noirzh.github.io/archives/2023/12/index.html">
+  <link rel="canonical" href="https://noirzh.github.io/2023/12/03/%E9%A2%98%E8%A7%A3-%E9%9C%80%E8%A6%81%E6%B7%BB%E5%8A%A0%E7%9A%84%E7%A1%AC%E5%B8%81%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E9%87%8F-%E6%9C%80%E5%A4%A7%E5%8C%96%E5%9C%A8%E7%BC%BA%E5%8F%A3%E5%A4%84%E8%A1%A5%E7%A1%AC%E5%B8%81%E7%9A%84%E4%BD%9C%E7%94%A8/index.html">
   
     <link rel="alternate" href="/atom.xml" title="一共十七划" type="application/atom+xml">
   
@@ -38,6 +44,8 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
+  
+    <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
   
   
   
@@ -486,68 +494,157 @@ mjx-container[display="true"] + br {
   
   
 <main class="main" role="main">
-  	<article class="content article article-archives article-type-list" itemscope="">
-	    <header class="article-header">
-	      <h1 itemprop="title">归档: 2023/12</h1>
-	      <p class="text-muted">共 22 篇文章</p>
-	    </header>
-	    <div class="article-body">
-	      
-  
-  
+  <div class="content">
+  <article id="post-题解-需要添加的硬币的最小数量-最大化在缺口处补硬币的作用" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
-    
+    <div class="article-header">
       
+        
+  
+    <h1 class="article-title" itemprop="name">
+      题解-需要添加的硬币的最小数量-最大化在缺口处补硬币的作用
+    </h1>
+  
+
       
-      <section class="panel panel-default b-no">
-        <div class="panel-heading" role="tab">
-          <h3 class="panel-title">
-            <a data-toggle="collapse" href="#collapse2023" aria-expanded="true">
-              <i class="icon icon-calendar-plus text-active"></i><i class="icon icon-calendar-minus text"></i>
-              2023
-            </a>
-            <!-- <a href="/archives/2023" class="archive-year">2023</a> -->
-          </h3>
-        </div>
-        <div id="collapse2023" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading2023">
-        <div class="panel-body">
-          <div class="collection">
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2023/12/03/%E9%A2%98%E8%A7%A3-%E9%9C%80%E8%A6%81%E6%B7%BB%E5%8A%A0%E7%9A%84%E7%A1%AC%E5%B8%81%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E9%87%8F-%E6%9C%80%E5%A4%A7%E5%8C%96%E5%9C%A8%E7%BC%BA%E5%8F%A3%E5%A4%84%E8%A1%A5%E7%A1%AC%E5%B8%81%E7%9A%84%E4%BD%9C%E7%94%A8/" class="article-date">
+	  <time datetime="2023-12-03T04:04:15.000Z" itemprop="datePublished">2023-12-03</time>
+	</a>
+</span>
+        
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/Python/" rel="tag">Python</a>, <a class="article-tag-link-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a>, <a class="article-tag-link-link" href="/tags/%E8%84%91%E7%AD%8B%E6%80%A5%E8%BD%AC%E5%BC%AF/" rel="tag">脑筋急转弯</a>, <a class="article-tag-link-link" href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag">题解</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/12/03/%E9%A2%98%E8%A7%A3-%E9%9C%80%E8%A6%81%E6%B7%BB%E5%8A%A0%E7%9A%84%E7%A1%AC%E5%B8%81%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E9%87%8F-%E6%9C%80%E5%A4%A7%E5%8C%96%E5%9C%A8%E7%BC%BA%E5%8F%A3%E5%A4%84%E8%A1%A5%E7%A1%AC%E5%B8%81%E7%9A%84%E4%BD%9C%E7%94%A8/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 412(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>Problem: <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-number-of-coins-to-be-added/description/">100153.
+需要添加的硬币的最小数量</a></p>
+</blockquote>
+<!--TOC-->
+<h1><span id="思路">思路</span></h1>
+<ul>
+<li>这题和<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-number-of-consecutive-values-you-can-make/description/">LeetCode-1798.
+你能构造出连续值的最大数目</a>很像,很经典的想法</li>
+<li>是子序列所以先排序</li>
+<li>先考虑我们手里的硬币能构造出来多少</li>
+<li>假设我们手里的硬币足够我们构造出来[0,x),接下来我们又拿到了一个硬币,数值为y,
+<ul>
+<li>如果我们把y放进之前的所有序列之中,会发现我们能够构造[y,x+y)</li>
+<li>再加上刚才的区间,我们手里的硬币加y之后能构造的数的范围为<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="15.994ex" height="2.262ex" role="img" focusable="false" viewbox="0 -750 7069.4 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"/></g><g data-mml-node="mn" transform="translate(278,0)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"/></g><g data-mml-node="mo" transform="translate(778,0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"/></g><g data-mml-node="mi" transform="translate(1222.7,0)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"/></g><g data-mml-node="mo" transform="translate(1794.7,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g><g data-mml-node="mo" transform="translate(2350.3,0) translate(0 -0.5)"><path data-c="22C3" d="M96 750Q103 750 109 748T120 744T127 737T133 730T137 723T139 718V395L140 73L142 60Q159 -43 237 -104T416 -166Q521 -166 597 -103T690 60L692 73L694 718Q708 749 735 749Q765 749 775 720Q777 714 777 398Q777 78 776 71Q766 -51 680 -140Q571 -249 416 -249H411Q261 -249 152 -140Q66 -51 56 71Q55 78 55 398Q55 714 57 720Q60 734 70 740Q80 750 96 750Z"/></g><g data-mml-node="mo" transform="translate(3183.3,0)"><path data-c="5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"/></g><g data-mml-node="mi" transform="translate(3461.3,0)"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mo" transform="translate(3951.3,0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"/></g><g data-mml-node="mi" transform="translate(4396,0)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"/></g><g data-mml-node="mo" transform="translate(5190.2,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"/></g><g data-mml-node="mi" transform="translate(6190.4,0)"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mo" transform="translate(6680.4,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container></span></li>
+<li>如果y&lt;=x则我们能够构造的数就能达到[0,x+y)</li>
+<li>如果y&gt;x则会有一段空缺</li>
+</ul></li>
+<li>为了填补这段空缺,我们应该往里面放另一块硬币,假设为z,根据上面的推论,我们很容易得到z会生成的片段为[z,x+z),而且z的取值范围应该为[y-x,x],为了让填补有效,且最大化填补的内容,应该让z=x,因为这样能最大化填补的空缺
+<ul>
+<li>取最大更有可能单次填补完空缺</li>
+</ul></li>
+<li>而我们遇到的问题只是将y换成了target,所有遇到的大于当前x的也认为是y即可</li>
+</ul>
+<h1><span id="code">Code</span></h1>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">minimumAddedCoins</span>(<span class="params">self, coins: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        coins.sort()</span><br><span class="line">        res=<span class="number">0</span></span><br><span class="line">        canMake=<span class="number">0</span> <span class="comment">#能生成的范围是[0,canMake]</span></span><br><span class="line">        i=<span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> i&lt;(<span class="built_in">len</span>(coins)):</span><br><span class="line">            val=coins[i]</span><br><span class="line">            <span class="keyword">if</span> val&lt;=canMake+<span class="number">1</span>:</span><br><span class="line">                canMake+=val</span><br><span class="line">                i+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                res+=<span class="number">1</span> <span class="comment">#这里补的硬币就是canMake+1</span></span><br><span class="line">                canMake+=canMake+<span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> canMake&lt;target:</span><br><span class="line">            res+=<span class="number">1</span></span><br><span class="line">            canMake+=canMake+<span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
     
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://noirzh.github.io/2023/12/03/%E9%A2%98%E8%A7%A3-%E9%9C%80%E8%A6%81%E6%B7%BB%E5%8A%A0%E7%9A%84%E7%A1%AC%E5%B8%81%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E9%87%8F-%E6%9C%80%E5%A4%A7%E5%8C%96%E5%9C%A8%E7%BC%BA%E5%8F%A3%E5%A4%84%E8%A1%A5%E7%A1%AC%E5%B8%81%E7%9A%84%E4%BD%9C%E7%94%A8/" title="题解-需要添加的硬币的最小数量-最大化在缺口处补硬币的作用" target="_blank" rel="external">https://noirzh.github.io/2023/12/03/题解-需要添加的硬币的最小数量-最大化在缺口处补硬币的作用/</a>
+    </li>
     
-<a href="/2023/12/03/%E9%A2%98%E8%A7%A3-%E9%9C%80%E8%A6%81%E6%B7%BB%E5%8A%A0%E7%9A%84%E7%A1%AC%E5%B8%81%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E9%87%8F-%E6%9C%80%E5%A4%A7%E5%8C%96%E5%9C%A8%E7%BC%BA%E5%8F%A3%E5%A4%84%E8%A1%A5%E7%A1%AC%E5%B8%81%E7%9A%84%E4%BD%9C%E7%94%A8/" class="collection-item"  target="_blank"   itemprop="url">
-  <time datetime="2023-12-03T04:04:15.000Z" itemprop="datePublished">2023-12-03</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 题解-需要添加的硬币的最小数量-最大化在缺口处补硬币的作用
-</a>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/NoirZh" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/92602390_p0.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/NoirZh" target="_blank"><span class="text-dark">Noir</span><small class="ml-1x">king&#39;s Pawn</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
 
 
   
-    
-    
-    
-<a href="/2023/12/01/%E9%A2%98%E8%A7%A3-%E6%B1%82%E5%92%8C%E6%B8%B8%E6%88%8F-%E6%95%B0%E5%AD%A6,%E4%BB%A5%E5%8F%8A%E7%AE%80%E5%8D%95%E5%88%86%E7%B1%BB%E8%AF%81%E6%98%8E/" class="collection-item"  target="_blank"   itemprop="url">
-  <time datetime="2023-12-01T12:15:11.000Z" itemprop="datePublished">2023-12-01</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 题解-求和游戏-数学,以及简单分类证明
-</a>
+</div>
 
-
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
   
+  <ul class="pager pull-left">
     
     
+    <li class="next">
+      <a href="/2023/12/01/%E9%A2%98%E8%A7%A3-%E6%B1%82%E5%92%8C%E6%B8%B8%E6%88%8F-%E6%95%B0%E5%AD%A6,%E4%BB%A5%E5%8F%8A%E7%AE%80%E5%8D%95%E5%88%86%E7%B1%BB%E8%AF%81%E6%98%8E/" title="题解-求和游戏-数学,以及简单分类证明"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
     
-<a href="/2023/12/01/%E9%A2%98%E8%A7%A3-%E6%89%BE%E5%87%BA%E5%8F%A0%E6%B6%82%E5%85%83%E7%B4%A0/" class="collection-item"  target="_blank"   itemprop="url">
-  <time datetime="2023-12-01T00:51:11.000Z" itemprop="datePublished">2023-12-01</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 题解-找出叠涂元素-哈希表,两种思路,在途中检查和在最后检查
-</a>
-
-
+    
+  </ul>
   
   
-    </div></div></div></section>
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
   
 
-	    </div>
-  	</article>
-  	 	
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -606,6 +703,39 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
 
 
 
